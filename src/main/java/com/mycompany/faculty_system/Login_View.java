@@ -117,15 +117,15 @@ public class Login_View extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("First Name:");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\user.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\user.png")); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\email.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\email.png")); // NOI18N
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\padlock.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\padlock.png")); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\user.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\user.png")); // NOI18N
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\padlock.png")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\padlock.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
