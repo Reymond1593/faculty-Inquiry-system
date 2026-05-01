@@ -57,6 +57,7 @@ public class Registration extends javax.swing.JFrame {
         error_message1 = new javax.swing.JLabel();
         error_message2 = new javax.swing.JLabel();
         error_message3 = new javax.swing.JLabel();
+        error_text = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -76,7 +77,7 @@ public class Registration extends javax.swing.JFrame {
 
         email.addActionListener(this::emailActionPerformed);
         jPanel1.add(email);
-        email.setBounds(38, 304, 414, 34);
+        email.setBounds(38, 304, 410, 34);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Password:");
@@ -154,23 +155,23 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(3, 204, 372, 24);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\user.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/user.png"))); // NOI18N
         jPanel1.add(jLabel11);
         jLabel11.setBounds(3, 234, 30, 34);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\email.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/email.png"))); // NOI18N
         jPanel1.add(jLabel10);
         jLabel10.setBounds(3, 304, 29, 34);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\padlock.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/padlock.png"))); // NOI18N
         jPanel1.add(jLabel13);
         jLabel13.setBounds(3, 380, 24, 36);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\padlock.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/padlock.png"))); // NOI18N
         jPanel1.add(jLabel14);
         jLabel14.setBounds(3, 452, 24, 36);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\user.png")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/user.png"))); // NOI18N
         jPanel1.add(jLabel15);
         jLabel15.setBounds(3, 158, 30, 34);
 
@@ -206,14 +207,16 @@ public class Registration extends javax.swing.JFrame {
         error_message3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(error_message3);
         error_message3.setBounds(0, 0, 0, 0);
+        jPanel1.add(error_text);
+        error_text.setBounds(3, 56, 440, 40);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 490, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 470, 650));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(300, 0));
         jPanel2.setLayout(null);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\add-user.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/add-user.png"))); // NOI18N
         jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel12);
         jLabel12.setBounds(220, 40, 140, 150);
@@ -316,6 +319,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel error_message1;
     private javax.swing.JLabel error_message2;
     private javax.swing.JLabel error_message3;
+    private javax.swing.JLabel error_text;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
