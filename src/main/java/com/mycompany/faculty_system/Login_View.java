@@ -79,6 +79,11 @@ public class Login_View extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 51, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Don't have any account? Please sign up");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jLabel4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jLabel4KeyPressed(evt);
@@ -117,15 +122,15 @@ public class Login_View extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("First Name:");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\user.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\email.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/email.png"))); // NOI18N
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\padlock.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\user.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\OneDrive\\Desktop\\NetBeansProjects\\faculty_system\\src\\main\\java\\com\\mycompany\\faculty_system\\icon\\padlock.png")); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,6 +286,18 @@ public class Login_View extends javax.swing.JFrame {
     private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_password1ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        
+            this.dispose();
+            Registration view = new Registration();
+
+            view.pack();
+            view.setLocationRelativeTo(null);
+            view.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments

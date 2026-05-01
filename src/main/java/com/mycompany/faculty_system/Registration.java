@@ -5,6 +5,7 @@
 package com.mycompany.faculty_system;
 
 import com.mycompany.faculty_system.Service.ValidateUser;
+import javax.swing.JFrame;
 
 /**
  *
@@ -93,7 +94,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Select Role:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(3, 514, 64, 16);
+        jLabel3.setBounds(3, 514, 66, 16);
 
         role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor", "Admin" }));
         role.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
@@ -105,7 +106,7 @@ public class Registration extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("REGISTER");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 102)));
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, new java.awt.Color(0, 0, 102), java.awt.Color.darkGray));
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1);
         jButton1.setBounds(260, 560, 130, 34);
@@ -115,6 +116,11 @@ public class Registration extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 51, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Already have an account? Login here");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jLabel4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jLabel4KeyPressed(evt);
@@ -164,23 +170,23 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(3, 204, 372, 24);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/user.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         jPanel1.add(jLabel11);
         jLabel11.setBounds(3, 234, 30, 34);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/email.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/email.png"))); // NOI18N
         jPanel1.add(jLabel10);
         jLabel10.setBounds(3, 304, 29, 34);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/padlock.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
         jPanel1.add(jLabel13);
         jLabel13.setBounds(3, 380, 24, 36);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/padlock.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
         jPanel1.add(jLabel14);
         jLabel14.setBounds(3, 452, 24, 36);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/user.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         jPanel1.add(jLabel15);
         jLabel15.setBounds(3, 158, 30, 34);
 
@@ -195,7 +201,7 @@ public class Registration extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 255));
         jButton2.setText("CLEAR");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 102)));
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, new java.awt.Color(0, 0, 102), java.awt.Color.darkGray));
         jButton2.addActionListener(this::jButton2ActionPerformed);
         jPanel1.add(jButton2);
         jButton2.setBounds(80, 560, 130, 34);
@@ -226,7 +232,7 @@ public class Registration extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(300, 0));
         jPanel2.setLayout(null);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/add-user.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-user.png"))); // NOI18N
         jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel12);
         jLabel12.setBounds(190, 50, 130, 140);
@@ -265,23 +271,7 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ValidateUser validateUser = new ValidateUser();
-        var user_email = email.getText();
-        var user_password = password.getText();
-        var user_role = role.getSelectedItem().toString();
-        var validation = validateUser.validate(user_email, user_password, user_role);
-
-        if(validation == true){
-            this.dispose();
-            Admin_view admin_view = new Admin_view();
-
-            admin_view.pack();
-            admin_view.setLocationRelativeTo(null); // Centers on screen
-            admin_view.setVisible(true);
-        }else{
-            error_message.setText(validateUser.getMessage());
-        }
-
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void roleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleActionPerformed
@@ -295,6 +285,18 @@ public class Registration extends javax.swing.JFrame {
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here
+        this.dispose();
+        Login_View login_view = new Login_View();
+        
+        login_view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        login_view.pack();
+        login_view.setLocationRelativeTo(null);
+        login_view.setVisible(true);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments

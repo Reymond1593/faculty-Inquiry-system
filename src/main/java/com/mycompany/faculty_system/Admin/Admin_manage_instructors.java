@@ -8,12 +8,12 @@ package com.mycompany.faculty_system.Admin;
  *
  * @author reymo
  */
-public class admin_manage_instructors extends javax.swing.JPanel {
+public class Admin_manage_instructors extends javax.swing.JPanel {
 
     /**
      * Creates new form manage_instructors
      */
-    public admin_manage_instructors() {
+    public Admin_manage_instructors() {
         initComponents();
     }
 
