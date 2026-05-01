@@ -75,6 +75,7 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(3, 274, 355, 24);
 
+        email.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         email.addActionListener(this::emailActionPerformed);
         jPanel1.add(email);
         email.setBounds(38, 304, 410, 34);
@@ -84,6 +85,7 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(3, 350, 357, 24);
 
+        password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         password.addActionListener(this::passwordActionPerformed);
         jPanel1.add(password);
         password.setBounds(33, 452, 419, 36);
@@ -94,6 +96,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel3.setBounds(3, 514, 64, 16);
 
         role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor", "Admin" }));
+        role.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         role.addActionListener(this::roleActionPerformed);
         jPanel1.add(role);
         role.setBounds(73, 506, 345, 32);
@@ -102,9 +105,10 @@ public class Registration extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("REGISTER");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 102)));
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1);
-        jButton1.setBounds(256, 566, 186, 34);
+        jButton1.setBounds(260, 560, 130, 34);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -117,7 +121,7 @@ public class Registration extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(9, 618, 421, 20);
+        jLabel4.setBounds(20, 620, 421, 20);
 
         error_message.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         error_message.setForeground(new java.awt.Color(255, 0, 51));
@@ -132,6 +136,7 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(397, 73, 476, 0);
 
+        password1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         password1.addActionListener(this::password1ActionPerformed);
         jPanel1.add(password1);
         password1.setBounds(33, 380, 419, 36);
@@ -140,6 +145,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel7.setText("Confirm Password:");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(3, 422, 396, 24);
+
+        email1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(email1);
         email1.setBounds(39, 158, 413, 34);
 
@@ -147,6 +154,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel8.setText("First Name:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(3, 128, 401, 24);
+
+        email2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(email2);
         email2.setBounds(39, 234, 413, 34);
 
@@ -177,7 +186,7 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel16.setForeground(new java.awt.Color(0, 0, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRATION");
         jPanel1.add(jLabel16);
@@ -186,9 +195,10 @@ public class Registration extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 255));
         jButton2.setText("CLEAR");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 102)));
         jButton2.addActionListener(this::jButton2ActionPerformed);
         jPanel1.add(jButton2);
-        jButton2.setBounds(9, 566, 186, 34);
+        jButton2.setBounds(80, 560, 130, 34);
 
         error_message1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         error_message1.setForeground(new java.awt.Color(255, 0, 51));
@@ -219,7 +229,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/faculty_system/icon/add-user.png"))); // NOI18N
         jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(220, 40, 140, 150);
+        jLabel12.setBounds(190, 50, 130, 140);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
@@ -227,14 +237,14 @@ public class Registration extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Create Your Account");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(10, 200, 550, 43);
+        jLabel5.setBounds(10, 200, 490, 43);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Fill up the form to create a new account.");
         jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(150, 250, 280, 30);
+        jLabel17.setBounds(120, 250, 280, 30);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 510, 650));
 
