@@ -13,14 +13,14 @@ import javax.swing.JDesktopPane;
  *
  * @author reymo
  */
-public class Admin_view extends javax.swing.JFrame {
+public class student_view extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Admin_view.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(student_view.class.getName());
 
     /**
      * Creates new form Admin_view
      */
-    public Admin_view() {
+    public student_view() {
         initComponents();
         admin_dashboard admin = new admin_dashboard();
         admin.setSize(admin_views.getSize());
@@ -40,7 +40,6 @@ public class Admin_view extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,10 +82,10 @@ public class Admin_view extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(0, 0, 102));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Departments");
+        jButton7.setText("Edit profile");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton7.addActionListener(this::jButton7ActionPerformed);
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 180, 32));
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 180, 32));
 
         jComboBox2.setBackground(new java.awt.Color(0, 0, 102));
         jComboBox2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -94,12 +93,6 @@ public class Admin_view extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Instructor", "-Add Instructor", "-Manage Instructor" }));
         jComboBox2.addActionListener(this::jComboBox2ActionPerformed);
         jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 220, 180, 30));
-
-        jComboBox3.setBackground(new java.awt.Color(0, 0, 102));
-        jComboBox3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Students", "-Add Students", "-Manage Students" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 180, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,12 +110,12 @@ public class Admin_view extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Admin User");
+        jLabel1.setText("Student User");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 180, 30));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Administrator");
+        jLabel2.setText("Student");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 560));
@@ -209,7 +202,7 @@ public class Admin_view extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Admin_view().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new student_view().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -219,7 +212,6 @@ public class Admin_view extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
