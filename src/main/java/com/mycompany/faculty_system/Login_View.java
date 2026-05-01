@@ -261,12 +261,12 @@ public class Login_View extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-//            this.dispose();
-//            Admin_view admin_view = new Admin_view();
-//
-//            admin_view.pack();
-//            admin_view.setLocationRelativeTo(null); // Centers on screen
-//            admin_view.setVisible(true);
+            this.dispose();
+            Admin_view admin_view = new Admin_view();
+
+            admin_view.pack();
+            admin_view.setLocationRelativeTo(null);
+            admin_view.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

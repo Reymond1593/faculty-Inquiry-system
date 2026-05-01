@@ -22,10 +22,14 @@ public class Admin_view extends javax.swing.JFrame {
      */
     public Admin_view() {
         initComponents();
-        admin_dashboard admin = new admin_dashboard();
-        admin.setSize(admin_views.getSize());
-        admin_views.add(admin);
-        admin.setVisible(true);
+    admin_views.removeAll();
+
+    admin_dashboard dashboard = new admin_dashboard();
+    admin_views.setLayout(new java.awt.BorderLayout());
+    admin_views.add(dashboard, java.awt.BorderLayout.CENTER);
+
+    admin_views.revalidate();
+    admin_views.repaint();
         
     }
 
