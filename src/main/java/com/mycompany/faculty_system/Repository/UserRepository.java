@@ -38,7 +38,7 @@ public class UserRepository {
             ps.setString(2, user.getLastname());
             ps.setString(3, user.getEmail());
             ps.setString(4, hashPassword);
-            ps.setString(5, user.getRole());
+            //ps.setString(5, user.getRole());
 
             ps.executeUpdate();
             
@@ -69,7 +69,7 @@ public class UserRepository {
         }
         
         User dbUser = new User();
-        dbUser.setRole(rs.getString("role"));
+        //dbUser.setRole(rs.getString("role"));
         dbUser.setFirstname(rs.getString("first_name"));
         dbUser.setLastname(rs.getString("last_name"));
         return dbUser;

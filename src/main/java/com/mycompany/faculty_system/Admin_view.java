@@ -307,9 +307,9 @@ public class Admin_view extends javax.swing.JFrame {
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 
-    public void setProfile(User dbUser) {
-        role.setText(dbUser.getRole());
-        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
-    }
+//    public void setProfile(User dbUser) {
+//        role.setText(dbUser.getRole());
+//        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
+//    }
 
 }
