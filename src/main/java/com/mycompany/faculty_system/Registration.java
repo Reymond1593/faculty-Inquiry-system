@@ -4,8 +4,13 @@
  */
 package com.mycompany.faculty_system;
 
+import com.mycompany.faculty_system.Model.User;
+import com.mycompany.faculty_system.Repository.UserRepository;
 import com.mycompany.faculty_system.Service.ValidateUser;
+import com.mycompany.faculty_system.Utilities.Alert;
+import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,20 +38,20 @@ public class Registration extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        UserEmail = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
+        UserConfirmPassword = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        role = new javax.swing.JComboBox<>();
+        UserRole = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         error_message = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        password1 = new javax.swing.JPasswordField();
+        UserPassword = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        email1 = new javax.swing.JTextField();
+        UserFirstname = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        email2 = new javax.swing.JTextField();
+        UserLastname = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -76,31 +81,31 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(3, 274, 355, 24);
 
-        email.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        email.addActionListener(this::emailActionPerformed);
-        jPanel1.add(email);
-        email.setBounds(38, 304, 410, 34);
+        UserEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        UserEmail.addActionListener(this::UserEmailActionPerformed);
+        jPanel1.add(UserEmail);
+        UserEmail.setBounds(38, 304, 410, 34);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(3, 350, 357, 24);
 
-        password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        password.addActionListener(this::passwordActionPerformed);
-        jPanel1.add(password);
-        password.setBounds(33, 452, 419, 36);
+        UserConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        UserConfirmPassword.addActionListener(this::UserConfirmPasswordActionPerformed);
+        jPanel1.add(UserConfirmPassword);
+        UserConfirmPassword.setBounds(33, 452, 419, 36);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Select Role:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(3, 514, 66, 16);
 
-        role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor", "Admin" }));
-        role.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        role.addActionListener(this::roleActionPerformed);
-        jPanel1.add(role);
-        role.setBounds(73, 506, 345, 32);
+        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor", "Admin" }));
+        UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        UserRole.addActionListener(this::UserRoleActionPerformed);
+        jPanel1.add(UserRole);
+        UserRole.setBounds(73, 506, 345, 32);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -142,28 +147,28 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(397, 73, 476, 0);
 
-        password1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        password1.addActionListener(this::password1ActionPerformed);
-        jPanel1.add(password1);
-        password1.setBounds(33, 380, 419, 36);
+        UserPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        UserPassword.addActionListener(this::UserPasswordActionPerformed);
+        jPanel1.add(UserPassword);
+        UserPassword.setBounds(33, 380, 419, 36);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm Password:");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(3, 422, 396, 24);
 
-        email1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        jPanel1.add(email1);
-        email1.setBounds(39, 158, 413, 34);
+        UserFirstname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        jPanel1.add(UserFirstname);
+        UserFirstname.setBounds(39, 158, 413, 34);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("First Name:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(3, 128, 401, 24);
 
-        email2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
-        jPanel1.add(email2);
-        email2.setBounds(39, 234, 413, 34);
+        UserLastname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
+        jPanel1.add(UserLastname);
+        UserLastname.setBounds(39, 234, 413, 34);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("Last Name:");
@@ -259,11 +264,16 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+            UserFirstname.setText("");
+            UserLastname.setText("");
+            UserEmail.setText("");
+            UserPassword.setText("");
+            UserConfirmPassword.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed
+    private void UserPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_password1ActionPerformed
+    }//GEN-LAST:event_UserPasswordActionPerformed
 
     private void jLabel4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel4KeyPressed
         // TODO add your handling code here:
@@ -271,20 +281,48 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String firstName = UserFirstname.getText();
+        String lastName = UserLastname.getText();
+        String email = UserEmail.getText();
+        String password = UserPassword.getText();
+        String confirmPassword = UserConfirmPassword.getText();
+        String role = UserRole.getSelectedItem().toString();
+        
+        User user = new User();
+        user.setFirstname(firstName);
+        user.setLastname(lastName);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setConfirmPassword(confirmPassword);
+        user.setRole(role );
+        
+        UserRepository repo = new UserRepository();
+        
+        try {
+            repo.addUser(user);
+            
+            UserFirstname.setText("");
+            UserLastname.setText("");
+            UserEmail.setText("");
+            UserPassword.setText("");
+            UserConfirmPassword.setText("");
+        } catch (SQLException ex) {
+            Alert.showError("Email already Taken !");
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void roleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleActionPerformed
+    private void UserRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserRoleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_roleActionPerformed
+    }//GEN-LAST:event_UserRoleActionPerformed
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void UserConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserConfirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_UserConfirmPasswordActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void UserEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_UserEmailActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here
@@ -324,9 +362,12 @@ public class Registration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
-    private javax.swing.JTextField email2;
+    private javax.swing.JPasswordField UserConfirmPassword;
+    private javax.swing.JTextField UserEmail;
+    private javax.swing.JTextField UserFirstname;
+    private javax.swing.JTextField UserLastname;
+    private javax.swing.JPasswordField UserPassword;
+    private javax.swing.JComboBox<String> UserRole;
     private javax.swing.JLabel error_message;
     private javax.swing.JLabel error_message1;
     private javax.swing.JLabel error_message2;
@@ -353,8 +394,5 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JPasswordField password1;
-    private javax.swing.JComboBox<String> role;
     // End of variables declaration//GEN-END:variables
 }

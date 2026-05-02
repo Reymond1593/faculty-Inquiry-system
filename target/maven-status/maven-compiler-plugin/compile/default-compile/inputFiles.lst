@@ -12,10 +12,14 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Stuent_view_instructor.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\test.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin_view.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Connection\DbConnector.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Faculty_system.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\instructor_view.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Login_View.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\User.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Registration.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\UserRepository.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Service\ValidateUser.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\student_view.java
-C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\HashPassword.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\Alert.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\PasswordUtil.java
