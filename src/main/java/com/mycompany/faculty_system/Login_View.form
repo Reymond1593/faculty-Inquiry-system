@@ -188,7 +188,7 @@
               <Color blue="ff" green="33" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Don&apos;t have any account? Please sign up"/>
+            <Property name="text" type="java.lang.String" value="Don&apos;t have any account? Please Select Role"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>

@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.faculty_system.Model;
 
-/**
- *
- * @author arjay
- */
 public class User {
     
     private int id;
@@ -15,61 +7,32 @@ public class User {
     private String lastname;
     private String email;
     private String password;
-    private String confirmPassword;
-    private String role;
+    private int roleId;
+    private Integer deptId;
+    private Integer courseId; 
 
-    public void setId(int id){
-        this.id = id;
-    }
-    
-    public void setFirstname(String firstName) {
-        this.firstname = firstName;
-    }
+    // Getters and Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setLastname(String lastName) {
-        this.lastname = lastName;
-    }
+    public String getFirstname() { return firstname; }
+    public void setFirstname(String firstname) { this.firstname = firstname; }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getLastname() { return lastname; }
+    public void setLastname(String lastname) { this.lastname = lastname; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public int getRoleId() { return roleId; }
+    public void setRoleId(int roleId) { this.roleId = roleId; }
 
-    public int getId(){
-        return id;
-    }
-    
-    public String getFirstname() {
-        return firstname;
-    }
+    public Integer getDeptId() { return deptId; }
+    public void setDeptId(Integer deptId) { this.deptId = deptId; }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-    public String getConfirmPassword(){
-        return confirmPassword;
-    }
-    public String getRole() {
-        return role;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-    
+    public Integer getCourseId() { return courseId; }
+    public void setCourseId(Integer courseId) { this.courseId = courseId; }
 }

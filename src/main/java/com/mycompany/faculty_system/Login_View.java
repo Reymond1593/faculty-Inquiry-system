@@ -68,7 +68,7 @@ public class Login_View extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 51, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Don't have any account? Please sign up");
+        jLabel4.setText("Don't have any account? Please Select Role");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -204,44 +204,44 @@ public class Login_View extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-            
-            User user = new User();
-            user.setEmail(email.getText());
-            user.setPassword(password.getText());
-            
-            UserRepository repo = new UserRepository();
-        try {
-            User dbUser = repo.getUser(user);
-            
-            
-            if(dbUser.getRole().equals("Student")){
-                this.dispose();
-                student_view view = new student_view();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-            if(dbUser.getRole().equals("Admin")){
-                this.dispose();
-                Admin_view view = new Admin_view();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-            if(dbUser.getRole().equals("Instructor")){
-                this.dispose();
-                instructor_view view = new instructor_view();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-                     
-        } catch (SQLException ex) {
-            Alert.showError(ex.getMessage());
-        }
+//            
+//            User user = new User();
+//            user.setEmail(email.getText());
+//            user.setPassword(password.getText());
+//            
+//            UserRepository repo = new UserRepository();
+//        try {
+//            User dbUser = repo.getUser(user);
+//            
+//            
+//            if(dbUser.getRole().equals("Student")){
+//                this.dispose();
+//                student_view view = new student_view();
+//                view.setProfile(dbUser);
+//                view.pack();
+//                view.setLocationRelativeTo(null);
+//                view.setVisible(true);
+//            }
+//            if(dbUser.getRole().equals("Admin")){
+//                this.dispose();
+//                Admin_view view = new Admin_view();
+//                view.setProfile(dbUser);
+//                view.pack();
+//                view.setLocationRelativeTo(null);
+//                view.setVisible(true);
+//            }
+//            if(dbUser.getRole().equals("Instructor")){
+//                this.dispose();
+//                instructor_view view = new instructor_view();
+//                view.setProfile(dbUser);
+//                view.pack();
+//                view.setLocationRelativeTo(null);
+//                view.setVisible(true);
+//            }
+//                     
+//        } catch (SQLException ex) {
+//            Alert.showError(ex.getMessage());
+//        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -257,7 +257,7 @@ public class Login_View extends javax.swing.JFrame {
         // TODO add your handling code here:
         
             this.dispose();
-            Registration view = new Registration();
+            UserRole view = new UserRole();
 
             view.pack();
             view.setLocationRelativeTo(null);

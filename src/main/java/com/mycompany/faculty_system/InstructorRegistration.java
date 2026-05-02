@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
  *
  * @author reymo
  */
-public class Registration extends javax.swing.JFrame {
+public class InstructorRegistration extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Registration.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InstructorRegistration.class.getName());
 
     /**
      * Creates new form Login_View
      */
-    public Registration() {
+    public InstructorRegistration() {
         initComponents();
     }
 
@@ -64,7 +64,6 @@ public class Registration extends javax.swing.JFrame {
         error_message1 = new javax.swing.JLabel();
         error_message2 = new javax.swing.JLabel();
         error_message3 = new javax.swing.JLabel();
-        error_text = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -80,33 +79,33 @@ public class Registration extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Email:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(3, 274, 355, 24);
+        jLabel1.setBounds(10, 230, 440, 24);
 
         UserEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserEmail.addActionListener(this::UserEmailActionPerformed);
         jPanel1.add(UserEmail);
-        UserEmail.setBounds(38, 304, 410, 34);
+        UserEmail.setBounds(40, 260, 410, 34);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(3, 350, 357, 24);
+        jLabel2.setBounds(10, 310, 440, 24);
 
         UserConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserConfirmPassword.addActionListener(this::UserConfirmPasswordActionPerformed);
         jPanel1.add(UserConfirmPassword);
-        UserConfirmPassword.setBounds(33, 452, 419, 36);
+        UserConfirmPassword.setBounds(40, 430, 410, 36);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Select Role:");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Select Departments:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(3, 514, 66, 16);
+        jLabel3.setBounds(10, 490, 140, 30);
 
-        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor" }));
+        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SOIT", "SOED" }));
         UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserRole.addActionListener(this::UserRoleActionPerformed);
         jPanel1.add(UserRole);
-        UserRole.setBounds(73, 506, 345, 32);
+        UserRole.setBounds(150, 490, 300, 32);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -115,7 +114,7 @@ public class Registration extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, new java.awt.Color(0, 0, 102), java.awt.Color.darkGray));
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1);
-        jButton1.setBounds(260, 560, 130, 34);
+        jButton1.setBounds(290, 550, 130, 34);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -133,7 +132,7 @@ public class Registration extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 620, 421, 20);
+        jLabel4.setBounds(30, 590, 421, 30);
 
         error_message.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         error_message.setForeground(new java.awt.Color(255, 0, 51));
@@ -151,50 +150,50 @@ public class Registration extends javax.swing.JFrame {
         UserPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserPassword.addActionListener(this::UserPasswordActionPerformed);
         jPanel1.add(UserPassword);
-        UserPassword.setBounds(33, 380, 419, 36);
+        UserPassword.setBounds(39, 340, 410, 36);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm Password:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(3, 422, 396, 24);
+        jLabel7.setBounds(10, 400, 440, 24);
 
         UserFirstname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(UserFirstname);
-        UserFirstname.setBounds(39, 158, 413, 34);
+        UserFirstname.setBounds(40, 100, 413, 34);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("First Name:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(3, 128, 401, 24);
+        jLabel8.setBounds(10, 70, 440, 24);
 
         UserLastname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(UserLastname);
-        UserLastname.setBounds(39, 234, 413, 34);
+        UserLastname.setBounds(40, 180, 413, 34);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("Last Name:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(3, 204, 372, 24);
+        jLabel9.setBounds(12, 150, 440, 24);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(3, 234, 30, 34);
+        jLabel11.setBounds(10, 180, 30, 34);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/email.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(3, 304, 29, 34);
+        jLabel10.setBounds(10, 260, 29, 34);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(3, 380, 24, 36);
+        jLabel13.setBounds(10, 340, 24, 36);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/padlock.png"))); // NOI18N
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(3, 452, 24, 36);
+        jLabel14.setBounds(10, 430, 24, 36);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(3, 158, 30, 34);
+        jLabel15.setBounds(10, 100, 30, 34);
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
@@ -210,7 +209,7 @@ public class Registration extends javax.swing.JFrame {
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, new java.awt.Color(0, 0, 102), java.awt.Color.darkGray));
         jButton2.addActionListener(this::jButton2ActionPerformed);
         jPanel1.add(jButton2);
-        jButton2.setBounds(80, 560, 130, 34);
+        jButton2.setBounds(60, 550, 130, 34);
 
         error_message1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         error_message1.setForeground(new java.awt.Color(255, 0, 51));
@@ -229,8 +228,6 @@ public class Registration extends javax.swing.JFrame {
         error_message3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(error_message3);
         error_message3.setBounds(0, 0, 0, 0);
-        jPanel1.add(error_text);
-        error_text.setBounds(3, 56, 440, 40);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 470, 650));
 
@@ -363,7 +360,7 @@ public class Registration extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Registration().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new InstructorRegistration().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -377,7 +374,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel error_message1;
     private javax.swing.JLabel error_message2;
     private javax.swing.JLabel error_message3;
-    private javax.swing.JLabel error_text;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
