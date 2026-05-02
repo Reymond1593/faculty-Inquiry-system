@@ -60,7 +60,7 @@ public class instructor_view extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setPreferredSize(new java.awt.Dimension(1000, 600));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setLayout(new java.awt.GridLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(300, 500));
@@ -129,24 +129,26 @@ public class instructor_view extends javax.swing.JFrame {
         role.setText("Instructor");
         jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 200, -1));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 560));
+        jPanel4.add(jPanel2);
 
         instructor_views.setBackground(new java.awt.Color(255, 255, 255));
         instructor_views.setPreferredSize(new java.awt.Dimension(600, 500));
         instructor_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(instructor_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 600, 550));
+        jPanel4.add(instructor_views);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 842, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pack();

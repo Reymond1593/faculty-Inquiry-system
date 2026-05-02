@@ -145,12 +145,12 @@ public class Admin_view extends javax.swing.JFrame {
         jButton8.addActionListener(this::jButton8ActionPerformed);
         jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 180, 32));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 560));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 220, 560));
 
         admin_views.setBackground(new java.awt.Color(255, 255, 255));
         admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
         admin_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(admin_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 680, 550));
+        jPanel4.add(admin_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 680, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

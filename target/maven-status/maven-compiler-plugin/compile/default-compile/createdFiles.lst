@@ -13,7 +13,6 @@ com\mycompany\faculty_system\Registration$2.class
 com\mycompany\faculty_system\Connection\DbConnector.class
 com\mycompany\faculty_system\Admin\Instructor_add_students.class
 com\mycompany\faculty_system\Admin\instructor_dashboard.class
-com\mycompany\faculty_system\Login_View$2.class
 com\mycompany\faculty_system\Admin\Admin_add_instructors.class
 com\mycompany\faculty_system\Admin\test.class
 com\mycompany\faculty_system\student_view.class
