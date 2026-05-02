@@ -4,6 +4,9 @@
  */
 package com.mycompany.faculty_system.Admin;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author reymo
@@ -13,10 +16,83 @@ public class Admin_manage_instructors extends javax.swing.JPanel {
     /**
      * Creates new form manage_instructors
      */
-    public Admin_manage_instructors() {
-        initComponents();
+    ArrayList<String[]> instructorList = new ArrayList<>();
+    
+public Admin_manage_instructors() {
+    initComponents();
+    
+    // Example Data (Add as many as you want to test scrolling)
+    instructorList.add(new String[]{"Reymond", "rey@email.com", "IT"});
+    instructorList.add(new String[]{"Jane Doe", "jane@email.com", "CS"});
+    instructorList.add(new String[]{"Mark Wood", "mark@email.com", "Engineering"});
+    instructorList.add(new String[]{"Sarah Lee", "sarah@email.com", "HR"});
+    instructorList.add(new String[]{"Tom Cruise", "tom@email.com", "Theater"});
+    instructorList.add(new String[]{"Tony Stark", "iron@email.com", "Physics"});
+
+    // Run the method to display them
+    refreshInstructorList(instructorList);
+}
+    
+private javax.swing.JPanel createRow(String name, String email, String dept) {
+    javax.swing.JPanel row = new javax.swing.JPanel();
+    row.setBackground(java.awt.Color.BLACK);
+    
+    // Set fixed height so they stack correctly
+    row.setPreferredSize(new java.awt.Dimension(680, 60));
+    row.setMaximumSize(new java.awt.Dimension(32767, 60));
+    row.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    // 1. Name Label (Aligned under the 'Name' header)
+    javax.swing.JLabel lblName = new javax.swing.JLabel(name);
+    lblName.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 20 to match your header
+    row.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 40));
+
+    // 2. Email Label (Aligned under 'E-Mail')
+    javax.swing.JLabel lblEmail = new javax.swing.JLabel(email);
+    lblEmail.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 170
+    row.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 110, 40));
+
+    // 3. Department Label (Aligned under 'Departments')
+    javax.swing.JLabel lblDept = new javax.swing.JLabel(dept);
+    lblDept.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 290
+    row.add(lblDept, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 120, 40));
+
+    // 4. White Action Box (Aligned under 'Action')
+    javax.swing.JPanel actionBox = new javax.swing.JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 8));
+    actionBox.setBackground(new java.awt.Color(240, 240, 240));
+    actionBox.add(new javax.swing.JButton("View"));
+    actionBox.add(new javax.swing.JButton("Update"));
+    actionBox.add(new javax.swing.JButton("Delete"));
+    // Moved this to the far right (X: 430) so it doesn't cover the text
+    row.add(actionBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 230, 40));
+
+    return row;
+}
+    public void refreshInstructorList(ArrayList<String[]> list) {
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
+    // 1. Remove everything currently in the panel
+    jPanel3.removeAll();
+
+    // 2. Loop through your data
+    for (String[] data : list) {
+        // Create the row using our template
+        javax.swing.JPanel instructorRow = createRow(data[0], data[1], data[2]);
+        
+        // Add row to the green container (jPanel2)
+        jPanel3.add(instructorRow);
+        
+        // Add a 10px gap between rows (the green space)
+        jPanel3.add(javax.swing.Box.createRigidArea(new java.awt.Dimension(0, 10)));
     }
 
+    // 3. Refresh the UI components
+    jPanel3.revalidate();
+    jPanel3.repaint();
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,48 +104,72 @@ public class Admin_manage_instructors extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(null);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setText("Search instructor...");
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(33, 27, 399, 22);
-
-        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "First Name", "Last Name", "E-Mail", "", ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(33, 68, 557, 414);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 27, 399, -1));
 
         jButton1.setBackground(new java.awt.Color(102, 255, 102));
         jButton1.setText("Search");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(450, 27, 72, 23);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 27, -1, -1));
+
+        jPanel7.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 13, -1, -1));
+
+        jLabel10.setText("Action");
+        jPanel8.add(jLabel10);
+
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 230, 30));
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Name");
+        jPanel9.add(jLabel11);
+
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 30));
+
+        jLabel12.setText("E-Mail");
+        jPanel10.add(jLabel12);
+
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 110, 30));
+
+        jLabel13.setText("Departments");
+        jPanel11.add(jLabel13);
+
+        jPanel7.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 120, 30));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Manage Instructor");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 640, 40));
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 710, 130));
+
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        jScrollPane2.setViewportView(jPanel3);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 710, 340));
 
         add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
@@ -77,9 +177,20 @@ public class Admin_manage_instructors extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

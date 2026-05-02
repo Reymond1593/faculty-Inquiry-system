@@ -307,7 +307,9 @@ public class Registration extends javax.swing.JFrame {
             UserPassword.setText("");
             UserConfirmPassword.setText("");
         } catch (SQLException ex) {
-            Alert.showError("Email already Taken !");
+            Alert.showError(ex.getMessage());
+//            Alert.showError("Email already Taken !");
+//            Alert.showError("Fill all the blank and check password match");
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

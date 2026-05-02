@@ -10,6 +10,7 @@ package com.mycompany.faculty_system.Model;
  */
 public class User {
     
+    private int id;
     private String firstname;
     private String lastname;
     private String email;
@@ -17,6 +18,10 @@ public class User {
     private String confirmPassword;
     private String role;
 
+    public void setId(int id){
+        this.id = id;
+    }
+    
     public void setFirstname(String firstName) {
         this.firstname = firstName;
     }
@@ -41,6 +46,10 @@ public class User {
         this.password = password;
     }
 
+    public int getId(){
+        return id;
+    }
+    
     public String getFirstname() {
         return firstname;
     }

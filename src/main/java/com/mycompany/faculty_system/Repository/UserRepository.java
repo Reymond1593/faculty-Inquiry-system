@@ -10,6 +10,7 @@ import com.mycompany.faculty_system.Service.ValidateUser;
 import com.mycompany.faculty_system.Utilities.Alert;
 import com.mycompany.faculty_system.Utilities.PasswordUtil;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -25,8 +26,8 @@ public class UserRepository {
     
     public void addUser(User user) throws SQLException {
         if(validate.checkField(user) == false || validate.matchPassword(user) == false){
-            Alert.showError("Fill all the blank and check password match");
-        }else{
+            throw new SQLException("Fill all the blank and check password match");
+        }
             String sql = "INSERT INTO `user`(`first_name`, `last_name`, `email`, `password`, `role`) "
                     + "VALUES (?,?,?,?,?)";
             
@@ -42,7 +43,36 @@ public class UserRepository {
             ps.executeUpdate();
             
             Alert.showSuccess("User Successfully add");
+        
+    }
+
+    public User getUser(User user) throws SQLException {
+        
+        if(user.getEmail().isEmpty() || user.getPassword().isEmpty()){
+            throw new SQLException("Fill All the Blank !");
         }
+        String sql = "SELECT * FROM user WHERE email = ?";
+        
+        PreparedStatement ps = connector.database().prepareStatement(sql);
+        ps.setString(1, user.getEmail());
+
+        ResultSet rs = ps.executeQuery();
+        
+        if(!rs.next()) {
+            throw new SQLException("No data found");
+        }              
+        String password = user.getPassword();
+        String dbPassword = rs.getString("password");    
+
+        if(!PasswordUtil.verifyPassword(password, dbPassword)){
+            throw new SQLException("Wrong email and Password");  
+        }
+        
+        User dbUser = new User();
+        dbUser.setRole(rs.getString("role"));
+        dbUser.setFirstname(rs.getString("first_name"));
+        dbUser.setLastname(rs.getString("last_name"));
+        return dbUser;
     }
     
 }

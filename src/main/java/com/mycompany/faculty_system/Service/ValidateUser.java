@@ -14,9 +14,12 @@ public class ValidateUser {
     
      
     public Boolean checkField(User user) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        
         if(user.getFirstname().isEmpty() || user.getLastname().isEmpty() 
             || user.getEmail().isEmpty() || user.getPassword().isEmpty()
-            || user.getConfirmPassword().isEmpty() || user.getRole().isEmpty()){
+            || user.getConfirmPassword().isEmpty() || user.getRole().isEmpty()
+            || !user.getEmail().matches(regex) ){
  
             return false;
         }

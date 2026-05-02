@@ -8,12 +8,12 @@ package com.mycompany.faculty_system.Admin;
  *
  * @author reymo
  */
-public class Admin_add_instructors extends javax.swing.JPanel {
+public class Instructor_add_students extends javax.swing.JPanel {
 
     /**
      * Creates new form add_instructors
      */
-    public Admin_add_instructors() {
+    public Instructor_add_students() {
         initComponents();
     }
 
@@ -46,7 +46,7 @@ public class Admin_add_instructors extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add Instructor");
+        jLabel1.setText("Add Student");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(77, 20, 510, 60);
         jPanel1.add(jTextField1);
@@ -68,9 +68,9 @@ public class Admin_add_instructors extends javax.swing.JPanel {
         jButton1.setBounds(340, 390, 90, 30);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Department:");
+        jLabel2.setText("Course:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(80, 320, 100, 30);
+        jLabel2.setBounds(110, 320, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("First Name:");

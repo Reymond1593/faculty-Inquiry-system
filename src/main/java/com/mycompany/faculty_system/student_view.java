@@ -4,10 +4,15 @@
  */
 package com.mycompany.faculty_system;
 
+import com.mycompany.faculty_system.Admin.Admin_add_instructors;
+import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
 import com.mycompany.faculty_system.Admin.Departments;
+import com.mycompany.faculty_system.Admin.Student_dashboard;
 import com.mycompany.faculty_system.Admin.admin_dashboard;
+import com.mycompany.faculty_system.Model.User;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 
 /**
  *
@@ -22,11 +27,14 @@ public class student_view extends javax.swing.JFrame {
      */
     public student_view() {
         initComponents();
-        admin_dashboard admin = new admin_dashboard();
-        admin.setSize(admin_views.getSize());
-        admin_views.add(admin);
-        admin.setVisible(true);
-        
+
+        Student_dashboard dashboard = new Student_dashboard();
+        students_views.setLayout(new java.awt.BorderLayout());
+        students_views.add(dashboard, java.awt.BorderLayout.CENTER);
+
+        students_views.revalidate();
+        students_views.repaint();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -39,11 +47,10 @@ public class student_view extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        admin_views = new javax.swing.JPanel();
+        username = new javax.swing.JLabel();
+        role = new javax.swing.JLabel();
+        students_views = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,14 +92,7 @@ public class student_view extends javax.swing.JFrame {
         jButton7.setText("Edit profile");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton7.addActionListener(this::jButton7ActionPerformed);
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 180, 32));
-
-        jComboBox2.setBackground(new java.awt.Color(0, 0, 102));
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Instructor", "-Add Instructor", "-Manage Instructor" }));
-        jComboBox2.addActionListener(this::jComboBox2ActionPerformed);
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 220, 180, 30));
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, 32));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,23 +107,23 @@ public class student_view extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Student User");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 180, 30));
+        username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        username.setText("Student User");
+        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 200, 30));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Student");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
+        role.setForeground(new java.awt.Color(255, 255, 255));
+        role.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        role.setText("Student");
+        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 560));
 
-        admin_views.setBackground(new java.awt.Color(255, 255, 255));
-        admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
-        admin_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(admin_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 600, 550));
+        students_views.setBackground(new java.awt.Color(255, 255, 255));
+        students_views.setPreferredSize(new java.awt.Dimension(600, 500));
+        students_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(students_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 600, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,20 +143,28 @@ public class student_view extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             // TODO add your handling code here:
-        admin_views.removeAll();
+        students_views.removeAll();
 
         admin_dashboard dashboard = new admin_dashboard();
-        dashboard.setSize(admin_views.getSize());
-        admin_views.add(dashboard);
+        dashboard.setSize(students_views.getSize());
+        students_views.add(dashboard);
         dashboard.setVisible(true);
 
-        admin_views.revalidate();
-        admin_views.repaint();
+        students_views.revalidate();
+        students_views.repaint();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Login_View login_view = new Login_View();
+        login_view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        login_view.pack();
+        login_view.setLocationRelativeTo(null);
+        login_view.setVisible(true);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -165,20 +173,8 @@ public class student_view extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        admin_views.removeAll();
 
-        Departments departments = new Departments();
-        departments.setSize(admin_views.getSize());
-        admin_views.add(departments);
-        departments.setVisible(true);
-
-        admin_views.revalidate();
-        admin_views.repaint();
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,16 +202,20 @@ public class student_view extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel admin_views;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel role;
+    private javax.swing.JPanel students_views;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+
+    public void setProfile(User dbUser) {
+        role.setText(dbUser.getRole());
+        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
+    }
 }

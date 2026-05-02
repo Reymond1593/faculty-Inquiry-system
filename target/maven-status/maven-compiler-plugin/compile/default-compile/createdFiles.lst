@@ -1,5 +1,4 @@
 com\mycompany\faculty_system\instructor_view.class
-com\mycompany\faculty_system\Admin\instructor_manage_student$1.class
 com\mycompany\faculty_system\Admin\Admin_add_student.class
 com\mycompany\faculty_system\Admin\Admin_manage_student.class
 com\mycompany\faculty_system\Admin\edit_instructor_profile.class
@@ -12,7 +11,7 @@ com\mycompany\faculty_system\Utilities\Alert.class
 com\mycompany\faculty_system\Admin\Admin_manage_instructors.class
 com\mycompany\faculty_system\Registration$2.class
 com\mycompany\faculty_system\Connection\DbConnector.class
-com\mycompany\faculty_system\Admin\Admin_manage_instructors$1.class
+com\mycompany\faculty_system\Admin\Instructor_add_students.class
 com\mycompany\faculty_system\Admin\instructor_dashboard.class
 com\mycompany\faculty_system\Login_View$2.class
 com\mycompany\faculty_system\Admin\Admin_add_instructors.class
@@ -20,7 +19,8 @@ com\mycompany\faculty_system\Admin\test.class
 com\mycompany\faculty_system\student_view.class
 com\mycompany\faculty_system\Admin\edit_student_profile.class
 com\mycompany\faculty_system\Repository\UserRepository.class
+com\mycompany\faculty_system\Admin\Instructor_manage_students$1.class
 com\mycompany\faculty_system\Model\User.class
-com\mycompany\faculty_system\Admin\instructor_manage_student.class
 com\mycompany\faculty_system\Utilities\PasswordUtil.class
+com\mycompany\faculty_system\Admin\Instructor_manage_students.class
 com\mycompany\faculty_system\Registration$1.class
