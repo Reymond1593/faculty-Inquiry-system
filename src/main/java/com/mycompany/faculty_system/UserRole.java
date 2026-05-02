@@ -48,7 +48,7 @@ public class UserRole extends javax.swing.JFrame {
         jLabel1.setText("Select Role");
 
         role.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor" }));
+        role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Role:", "Student", "Instructor" }));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

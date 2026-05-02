@@ -42,7 +42,6 @@ public class Registration extends javax.swing.JFrame {
         UserEmail = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         UserConfirmPassword = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
         UserRole = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -95,20 +94,16 @@ public class Registration extends javax.swing.JFrame {
         UserConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserConfirmPassword.addActionListener(this::UserConfirmPasswordActionPerformed);
         jPanel1.add(UserConfirmPassword);
-        UserConfirmPassword.setBounds(33, 452, 419, 36);
+        UserConfirmPassword.setBounds(42, 452, 410, 36);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Select Role:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(3, 514, 66, 16);
-
-        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Instructor" }));
+        UserRole.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Role:", "Student", "Instructor" }));
         UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserRole.addActionListener(this::UserRoleActionPerformed);
         jPanel1.add(UserRole);
-        UserRole.setBounds(73, 506, 345, 32);
+        UserRole.setBounds(0, 510, 450, 32);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
+        jButton1.setBackground(new java.awt.Color(0, 0, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("REGISTER");
@@ -151,7 +146,7 @@ public class Registration extends javax.swing.JFrame {
         UserPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserPassword.addActionListener(this::UserPasswordActionPerformed);
         jPanel1.add(UserPassword);
-        UserPassword.setBounds(33, 380, 419, 36);
+        UserPassword.setBounds(42, 380, 410, 36);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm Password:");
@@ -198,14 +193,14 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel16.setForeground(new java.awt.Color(0, 0, 102));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRATION");
         jPanel1.add(jLabel16);
         jLabel16.setBounds(38, 9, 354, 43);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 102));
         jButton2.setText("CLEAR");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, new java.awt.Color(0, 0, 102), java.awt.Color.darkGray));
         jButton2.addActionListener(this::jButton2ActionPerformed);
@@ -390,7 +385,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
