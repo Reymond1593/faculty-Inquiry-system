@@ -4,40 +4,32 @@
  */
 package com.mycompany.faculty_system.Service;
 
+import com.mycompany.faculty_system.Model.User;
+
 /**
  *
  * @author reymo
  */
 public class ValidateUser {
     
-    private String msg;
-    
-    
-    public Boolean validate(String email, String password, String role){
+     
+    public Boolean checkField(User user) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         
-        
-        
-        if(email.isEmpty()){
-            setMessage("Empty email");
+        if(user.getFirstname().isEmpty() || user.getLastname().isEmpty() 
+            || user.getEmail().isEmpty() || user.getPassword().isEmpty()
+            || user.getConfirmPassword().isEmpty() || user.getRole().isEmpty()
+            || !user.getEmail().matches(regex) ){
+ 
             return false;
         }
-        if(password.isEmpty()){
-            setMessage("Empty password");
-            return false;
-        }
-        if(role.isEmpty()){
-            setMessage("Empty role");
-            return false;
-        }
-        
         return true;
     }
-    
-    public void setMessage(String msg){
-        this.msg = msg;
-    }
-    
-    public String getMessage(){
-        return msg;
+
+    public Boolean matchPassword(User user) {
+        if(user.getPassword().equals(user.getConfirmPassword())){
+            return true;
+        }
+        return false;
     }
 }
