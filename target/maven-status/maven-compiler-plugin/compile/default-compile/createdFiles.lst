@@ -34,4 +34,3 @@ com\mycompany\faculty_system\StudentRegistration$1.class
 com\mycompany\faculty_system\student_view.class
 com\mycompany\faculty_system\Admin\Admin_add_departments.class
 com\mycompany\faculty_system\Admin\edit_student_profile.class
-com\mycompany\faculty_system\LoginView.class
