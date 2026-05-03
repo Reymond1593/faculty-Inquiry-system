@@ -11,14 +11,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author reymo
  */
-public class Admin_manage_instructors extends javax.swing.JPanel {
+public class Admin_manage_departments extends javax.swing.JPanel {
 
     /**
      * Creates new form manage_instructors
      */
     ArrayList<String[]> instructorList = new ArrayList<>();
     
-public Admin_manage_instructors() {
+public Admin_manage_departments() {
     initComponents();
     
     // Example Data (Add as many as you want to test scrolling)
@@ -108,15 +108,10 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jButton1 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
 
@@ -125,7 +120,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("Search instructor...");
+        jTextField1.setText("Search departments...");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 400, 30));
@@ -141,47 +136,25 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 13, -1, -1));
 
-        jPanel8.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("ACTIONS");
-        jPanel8.add(jLabel10);
-
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 230, 30));
-
-        jPanel9.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("NAME");
-        jPanel9.add(jLabel11);
-
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 70, 30));
-
-        jPanel10.setBackground(new java.awt.Color(102, 153, 255));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("E-MAIL");
-        jPanel10.add(jLabel12);
-
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 110, 30));
-
-        jPanel11.setBackground(new java.awt.Color(102, 153, 255));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("DEPARTMENT");
-        jPanel11.add(jLabel13);
-
-        jPanel7.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 120, 30));
-
         jLabel14.setBackground(new java.awt.Color(153, 153, 153));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 34)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Manage Instructor");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 710, -1));
+        jLabel14.setText("Manage Department");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 710, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("COURSE CODE");
+        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 140, 30));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("COURSE NAME");
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 110, 30));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("ACTIONS");
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 70, 30));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 710, 130));
 
@@ -204,16 +177,11 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

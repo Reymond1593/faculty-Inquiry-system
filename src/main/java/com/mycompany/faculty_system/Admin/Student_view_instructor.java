@@ -8,12 +8,12 @@ package com.mycompany.faculty_system.Admin;
  *
  * @author reymo
  */
-public class Stuent_view_instructor extends javax.swing.JPanel {
+public class Student_view_instructor extends javax.swing.JPanel {
 
     /**
      * Creates new form manage_instructors
      */
-    public Stuent_view_instructor() {
+    public Student_view_instructor() {
         initComponents();
     }
 

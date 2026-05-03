@@ -118,7 +118,7 @@ public class StudentRegistration extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Already have an account? Login here");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,8 +196,8 @@ public class StudentRegistration extends javax.swing.JFrame {
         jLabel15.setBounds(10, 100, 30, 34);
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 102));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRATION");
         jPanel1.add(jLabel16);

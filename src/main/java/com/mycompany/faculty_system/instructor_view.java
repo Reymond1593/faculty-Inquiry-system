@@ -6,7 +6,7 @@ package com.mycompany.faculty_system;
 
 import com.mycompany.faculty_system.Admin.Admin_add_instructors;
 import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
-import com.mycompany.faculty_system.Admin.Departments;
+import com.mycompany.faculty_system.Admin.Admin_add_departments;
 import com.mycompany.faculty_system.Admin.Instructor_add_students;
 import com.mycompany.faculty_system.Admin.Instructor_manage_students;
 import com.mycompany.faculty_system.Admin.Student_dashboard;

@@ -42,7 +42,6 @@ public class InstructorRegistration extends javax.swing.JFrame {
         UserEmail = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         UserConfirmPassword = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
         UserRole = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -96,16 +95,12 @@ public class InstructorRegistration extends javax.swing.JFrame {
         jPanel1.add(UserConfirmPassword);
         UserConfirmPassword.setBounds(40, 430, 410, 36);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Select Departments:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 490, 140, 30);
-
-        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SOIT", "SOED" }));
+        UserRole.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "SOIT", "SOED" }));
         UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserRole.addActionListener(this::UserRoleActionPerformed);
         jPanel1.add(UserRole);
-        UserRole.setBounds(150, 490, 300, 32);
+        UserRole.setBounds(40, 490, 410, 32);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -196,12 +191,12 @@ public class InstructorRegistration extends javax.swing.JFrame {
         jLabel15.setBounds(10, 100, 30, 34);
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 102));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRATION");
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(38, 9, 354, 43);
+        jLabel16.setBounds(0, 10, 460, 43);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 255));
@@ -386,7 +381,6 @@ public class InstructorRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
