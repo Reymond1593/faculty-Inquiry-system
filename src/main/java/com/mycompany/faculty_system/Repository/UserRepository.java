@@ -21,66 +21,18 @@ import javax.swing.JOptionPane;
  */
 public class UserRepository {
     
-    private DbConnector connector = new DbConnector();
-    private ValidateUser validate = new ValidateUser();
-    
-    
-    public void addUser(User user) throws SQLException {
-        if(validate.checkField(user) == false || validate.matchPassword(user) == false){
-            throw new SQLException("Fill all the blank and check password match");
-        }
-            String sql = "INSERT INTO `user`(`first_name`, `last_name`, `email`, `password`, `role`) "
-                    + "VALUES (?,?,?,?,?)";
-            
-            String hashPassword = PasswordUtil.hashPassword(user.getPassword());
-
-            PreparedStatement ps = connector.database().prepareStatement(sql);
-            ps.setString(1, user.getFirstname());
-            ps.setString(2, user.getLastname());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, hashPassword);
-            //ps.setString(5, user.getRoleId());
-
-            ps.executeUpdate();
-            
-            Alert.showSuccess("User Successfully add");
-        
+    public void addInstructor(User user) throws SQLException {
+        addInstructor add = new addInstructor();
+        add.handle(user);
+    }
+    public void addStudent(User user) throws SQLException {
+        addStudent add = new addStudent();
+        add.handle(user);
     }
 
     public User getUser(User user) throws SQLException {
-        
-        if(user.getEmail().isEmpty() || user.getPassword().isEmpty()){
-            throw new SQLException("Fill All the Blank !");
-        }
-        String sql = "SELECT * FROM users u JOIN roles r ON u.role_id = r.role_id WHERE u.email = ?";
-        
-        PreparedStatement ps = connector.database().prepareStatement(sql);
-        ps.setString(1, user.getEmail());
-
-        ResultSet rs = ps.executeQuery();
-        
-        if(!rs.next()) {
-            throw new SQLException("No data found");
-        }              
-        String password = user.getPassword();
-        String dbPassword = rs.getString("password");    
-
-//        if(!PasswordUtil.verifyPassword(password, dbPassword)){
-//            throw new SQLException("Wrong email and Password");  
-//        }
-        if(!password.equals(dbPassword)){
-            throw new SQLException("Wrong email and Password");  
-        }
-        
-        Roles roles = new Roles();
-        roles.setId(rs.getInt("role_id"));
-        roles.setName(rs.getString("role_name"));
-        
-        User dbUser = new User();
-        dbUser.setRoles(roles);
-        dbUser.setFirstname(rs.getString("first_name"));
-        dbUser.setLastname(rs.getString("last_name"));
-        return dbUser;
+        getUserByEmail_Password get = new getUserByEmail_Password();
+        return get.handle(user);
     }
     
 }

@@ -52,9 +52,15 @@ C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\InstructorRegistration.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Login_View.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\LoginView.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Courses.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Departments.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Roles.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\User.java
-C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Registration.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\addInstructor.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\addStudent.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\getCoursesIdByName.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\getDepartmentIdByName.java
+C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\getUserByEmail_Password.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\UserRepository.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Service\ValidateUser.java
 C:\Users\ADMIN\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\student_view.java
