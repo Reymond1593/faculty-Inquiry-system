@@ -1,5 +1,6 @@
 package com.mycompany.faculty_system.Model;
 
+
 public class User {
     
     private int id;
@@ -7,9 +8,9 @@ public class User {
     private String lastname;
     private String email;
     private String password;
-    private int roleId;
     private Integer deptId;
-    private Integer courseId; 
+    private Integer courseId;
+    private Roles roles;
 
     // Getters and Setters
     public int getId() { return id; }
@@ -27,8 +28,8 @@ public class User {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    public int getRoleId() { return roleId; }
-    public void setRoleId(int roleId) { this.roleId = roleId; }
+    public Roles getRoles() { return roles; }
+    public void setRoles(Roles roles) { this.roles = roles; }
 
     public Integer getDeptId() { return deptId; }
     public void setDeptId(Integer deptId) { this.deptId = deptId; }

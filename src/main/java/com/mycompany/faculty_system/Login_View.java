@@ -4,6 +4,7 @@
  */
 package com.mycompany.faculty_system;
 
+import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Repository.UserRepository;
 import com.mycompany.faculty_system.Utilities.Alert;
@@ -204,44 +205,44 @@ public class Login_View extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//            
-//            User user = new User();
-//            user.setEmail(email.getText());
-//            user.setPassword(password.getText());
-//            
-//            UserRepository repo = new UserRepository();
-//        try {
-//            User dbUser = repo.getUser(user);
-//            
-//            
-//            if(dbUser.getRole().equals("Student")){
-//                this.dispose();
-//                student_view view = new student_view();
-//                view.setProfile(dbUser);
-//                view.pack();
-//                view.setLocationRelativeTo(null);
-//                view.setVisible(true);
-//            }
-//            if(dbUser.getRole().equals("Admin")){
-//                this.dispose();
-//                Admin_view view = new Admin_view();
-//                view.setProfile(dbUser);
-//                view.pack();
-//                view.setLocationRelativeTo(null);
-//                view.setVisible(true);
-//            }
-//            if(dbUser.getRole().equals("Instructor")){
-//                this.dispose();
-//                instructor_view view = new instructor_view();
-//                view.setProfile(dbUser);
-//                view.pack();
-//                view.setLocationRelativeTo(null);
-//                view.setVisible(true);
-//            }
-//                     
-//        } catch (SQLException ex) {
-//            Alert.showError(ex.getMessage());
-//        }
+            
+            User user = new User();
+            user.setEmail(email.getText());
+            user.setPassword(password.getText());
+            
+            UserRepository repo = new UserRepository();
+        try {
+            User dbUser = repo.getUser(user);
+            Roles roles = dbUser.getRoles();
+            
+            if (roles.getId() == 3){
+                this.dispose();
+                student_view view = new student_view();
+                view.setProfile(dbUser);
+                view.pack();
+                view.setLocationRelativeTo(null);
+                view.setVisible(true);
+            }
+            if (roles.getId() == 1){
+                this.dispose();
+                Admin_view view = new Admin_view();
+                view.setProfile(dbUser);
+                view.pack();
+                view.setLocationRelativeTo(null);
+                view.setVisible(true);
+            }
+            if (roles.getId() == 2){
+                this.dispose();
+                instructor_view view = new instructor_view();
+                view.setProfile(dbUser);
+                view.pack();
+                view.setLocationRelativeTo(null);
+                view.setVisible(true);
+            }
+                     
+        } catch (SQLException ex) {
+            Alert.showError(ex.getMessage());
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

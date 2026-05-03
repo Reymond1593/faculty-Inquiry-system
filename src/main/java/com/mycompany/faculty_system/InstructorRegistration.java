@@ -282,14 +282,14 @@ public class InstructorRegistration extends javax.swing.JFrame {
         String role = UserRole.getSelectedItem().toString();
         
         Roles roles = new Roles();
-        roles.setId(role);
+        //roles.setId(role);
         
         User user = new User();
         user.setFirstname(firstName);
         user.setLastname(lastName);
         user.setEmail(email);
         user.setPassword(password);
-        user.setRoleId(roles.getId());
+        //user.setRoleId(roles.getId());
         
         UserRepository repo = new UserRepository();
         

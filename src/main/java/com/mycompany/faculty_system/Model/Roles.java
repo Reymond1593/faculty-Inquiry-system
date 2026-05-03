@@ -10,16 +10,19 @@ package com.mycompany.faculty_system.Model;
  */
 public class Roles {
     private int id;
+    private String name;
     
-    public void setId(String id){
-        if(id.equals("Student")){
-            this.id = 3;
-        }
-        if(id.equals("Instructor")){
-            this.id = 2;
-        }
+    public void setId(int id){
+        this.id = id;
     }
     public int getId(){
         return id;
+    }
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
     }
 }
