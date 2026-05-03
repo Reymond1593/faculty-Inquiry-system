@@ -9,8 +9,8 @@ import javax.swing.JFrame;
 
 public class Faculty_system {
     public static void main(String[] args){
-        Admin_view role = new Admin_view();
-        //UserRole role = new UserRole();
+        //Admin_view role = new Admin_view();
+        Login_View role = new Login_View();
         role.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         role.pack();
         role.setLocationRelativeTo(null);

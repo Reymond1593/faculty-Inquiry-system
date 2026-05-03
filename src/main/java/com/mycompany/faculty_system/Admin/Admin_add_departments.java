@@ -42,7 +42,6 @@ public class Admin_add_departments extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\corporation (1).png")); // NOI18N
         jLabel1.setText("Add Department");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 470, 140));
 
@@ -50,13 +49,13 @@ public class Admin_add_departments extends javax.swing.JPanel {
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField1.setText("Course Code");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 2, true));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 470, 38));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 38));
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField2.setText("Course Name");
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 2, true));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 470, 38));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 450, 38));
 
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

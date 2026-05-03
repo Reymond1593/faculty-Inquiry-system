@@ -60,7 +60,7 @@ public class Admin_view extends javax.swing.JFrame {
         admin_views = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 500));
+        setPreferredSize(new java.awt.Dimension(1200, 500));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
@@ -120,18 +120,18 @@ public class Admin_view extends javax.swing.JFrame {
             .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         username.setText("Admin User");
-        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 200, 30));
+        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 200, 30));
 
         role.setForeground(new java.awt.Color(255, 255, 255));
         role.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         role.setText("Administrator");
-        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 180, -1));
+        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 180, -1));
 
         jButton8.setBackground(new java.awt.Color(0, 0, 102));
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -155,15 +155,11 @@ public class Admin_view extends javax.swing.JFrame {
         admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
         admin_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel4.add(admin_views);
-        admin_views.setBounds(220, 0, 630, 560);
+        admin_views.setBounds(230, 10, 900, 440);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 839;
-        gridBagConstraints.ipady = 559;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        gridBagConstraints.ipadx = 900;
+        gridBagConstraints.ipady = 500;
         getContentPane().add(jPanel4, gridBagConstraints);
 
         pack();
