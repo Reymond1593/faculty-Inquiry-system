@@ -9,6 +9,7 @@ import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
 import com.mycompany.faculty_system.Admin.Departments;
 import com.mycompany.faculty_system.Admin.Student_dashboard;
 import com.mycompany.faculty_system.Admin.admin_dashboard;
+import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
@@ -214,8 +215,10 @@ public class student_view extends javax.swing.JFrame {
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 
-//    public void setProfile(User dbUser) {
-//        role.setText(dbUser.getRole());
-//        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
-//    }
+    public void setProfile(User dbUser) {
+        Roles roles = dbUser.getRoles();
+        
+        role.setText(roles.getName());
+        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
+    }
 }

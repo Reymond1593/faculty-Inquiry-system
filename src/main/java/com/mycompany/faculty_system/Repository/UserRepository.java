@@ -5,6 +5,7 @@
 package com.mycompany.faculty_system.Repository;
 
 import com.mycompany.faculty_system.Connection.DbConnector;
+import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Service.ValidateUser;
 import com.mycompany.faculty_system.Utilities.Alert;
@@ -38,7 +39,7 @@ public class UserRepository {
             ps.setString(2, user.getLastname());
             ps.setString(3, user.getEmail());
             ps.setString(4, hashPassword);
-            //ps.setString(5, user.getRole());
+            //ps.setString(5, user.getRoleId());
 
             ps.executeUpdate();
             
@@ -51,7 +52,7 @@ public class UserRepository {
         if(user.getEmail().isEmpty() || user.getPassword().isEmpty()){
             throw new SQLException("Fill All the Blank !");
         }
-        String sql = "SELECT * FROM user WHERE email = ?";
+        String sql = "SELECT * FROM users u JOIN roles r ON u.role_id = r.role_id WHERE u.email = ?";
         
         PreparedStatement ps = connector.database().prepareStatement(sql);
         ps.setString(1, user.getEmail());
@@ -64,12 +65,19 @@ public class UserRepository {
         String password = user.getPassword();
         String dbPassword = rs.getString("password");    
 
-        if(!PasswordUtil.verifyPassword(password, dbPassword)){
+//        if(!PasswordUtil.verifyPassword(password, dbPassword)){
+//            throw new SQLException("Wrong email and Password");  
+//        }
+        if(!password.equals(dbPassword)){
             throw new SQLException("Wrong email and Password");  
         }
         
+        Roles roles = new Roles();
+        roles.setId(rs.getInt("role_id"));
+        roles.setName(rs.getString("role_name"));
+        
         User dbUser = new User();
-        //dbUser.setRole(rs.getString("role"));
+        dbUser.setRoles(roles);
         dbUser.setFirstname(rs.getString("first_name"));
         dbUser.setLastname(rs.getString("last_name"));
         return dbUser;
