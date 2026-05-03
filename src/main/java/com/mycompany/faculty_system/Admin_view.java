@@ -155,7 +155,7 @@ public class Admin_view extends javax.swing.JFrame {
         admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
         admin_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel4.add(admin_views);
-        admin_views.setBounds(230, 10, 900, 440);
+        admin_views.setBounds(230, 10, 900, 480);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 900;

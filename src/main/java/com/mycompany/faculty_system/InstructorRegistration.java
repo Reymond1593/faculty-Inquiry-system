@@ -37,7 +37,13 @@ public class InstructorRegistration extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         UserEmail = new javax.swing.JTextField();
@@ -64,44 +70,72 @@ public class InstructorRegistration extends javax.swing.JFrame {
         error_message1 = new javax.swing.JLabel();
         error_message2 = new javax.swing.JLabel();
         error_message3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(900, 500));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(900, 500));
+        jPanel3.setLayout(null);
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
+        jPanel2.setLayout(null);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-user.png"))); // NOI18N
+        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(jLabel12);
+        jLabel12.setBounds(190, 50, 130, 140);
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Create Your Account");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(10, 200, 490, 43);
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Fill up the form to create a new account.");
+        jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(jLabel17);
+        jLabel17.setBounds(120, 250, 280, 30);
+
+        jPanel3.add(jPanel2);
+        jPanel2.setBounds(0, 0, 440, 630);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Email:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 230, 440, 24);
+        jLabel1.setBounds(10, 230, 460, 24);
 
         UserEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserEmail.addActionListener(this::UserEmailActionPerformed);
         jPanel1.add(UserEmail);
-        UserEmail.setBounds(40, 260, 410, 34);
+        UserEmail.setBounds(40, 260, 430, 34);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 310, 440, 24);
+        jLabel2.setBounds(10, 310, 460, 24);
 
         UserConfirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserConfirmPassword.addActionListener(this::UserConfirmPasswordActionPerformed);
         jPanel1.add(UserConfirmPassword);
-        UserConfirmPassword.setBounds(40, 430, 410, 36);
+        UserConfirmPassword.setBounds(40, 430, 430, 36);
 
         UserRole.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "SOIT", "SOED" }));
         UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserRole.addActionListener(this::UserRoleActionPerformed);
         jPanel1.add(UserRole);
-        UserRole.setBounds(40, 490, 410, 32);
+        UserRole.setBounds(40, 490, 430, 32);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -146,30 +180,30 @@ public class InstructorRegistration extends javax.swing.JFrame {
         UserPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserPassword.addActionListener(this::UserPasswordActionPerformed);
         jPanel1.add(UserPassword);
-        UserPassword.setBounds(39, 340, 410, 36);
+        UserPassword.setBounds(39, 340, 430, 36);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Confirm Password:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(10, 400, 440, 24);
+        jLabel7.setBounds(10, 400, 460, 24);
 
         UserFirstname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(UserFirstname);
-        UserFirstname.setBounds(40, 100, 413, 34);
+        UserFirstname.setBounds(40, 100, 430, 34);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setText("First Name:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 70, 440, 24);
+        jLabel8.setBounds(10, 70, 460, 24);
 
         UserLastname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         jPanel1.add(UserLastname);
-        UserLastname.setBounds(40, 180, 413, 34);
+        UserLastname.setBounds(40, 180, 430, 34);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("Last Name:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(12, 150, 440, 24);
+        jLabel9.setBounds(12, 150, 450, 24);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         jPanel1.add(jLabel11);
@@ -197,7 +231,7 @@ public class InstructorRegistration extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRATION");
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(0, 10, 460, 43);
+        jLabel16.setBounds(0, 13, 480, 40);
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 255));
@@ -225,33 +259,17 @@ public class InstructorRegistration extends javax.swing.JFrame {
         jPanel1.add(error_message3);
         error_message3.setBounds(0, 0, 0, 0);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 470, 650));
+        jPanel3.add(jPanel1);
+        jPanel1.setBounds(440, 0, 480, 630);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
-        jPanel2.setPreferredSize(new java.awt.Dimension(300, 0));
-        jPanel2.setLayout(null);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/add-user.png"))); // NOI18N
-        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLabel12);
-        jLabel12.setBounds(190, 50, 130, 140);
-
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Create Your Account");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(10, 200, 490, 43);
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Fill up the form to create a new account.");
-        jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLabel17);
-        jLabel17.setBounds(120, 250, 280, 30);
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 510, 650));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 942;
+        gridBagConstraints.ipady = 645;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(19, 31, 6, 21);
+        getContentPane().add(jPanel3, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -399,5 +417,6 @@ public class InstructorRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

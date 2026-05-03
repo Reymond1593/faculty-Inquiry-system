@@ -41,6 +41,9 @@ com\mycompany\faculty_system\StudentRegistration$1.class
 com\mycompany\faculty_system\student_view.class
 com\mycompany\faculty_system\Admin\Admin_add_departments.class
 com\mycompany\faculty_system\Admin\edit_student_profile.class
+<<<<<<< HEAD
+=======
 com\mycompany\faculty_system\Repository\addStudent.class
 com\mycompany\faculty_system\Model\Courses.class
 com\mycompany\faculty_system\Model\Departments.class
+>>>>>>> f79d08c72772d6a6b75a1f4524fe8a39a24b191f
