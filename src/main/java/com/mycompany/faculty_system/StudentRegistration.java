@@ -4,6 +4,8 @@
  */
 package com.mycompany.faculty_system;
 
+import com.mycompany.faculty_system.Model.Courses;
+import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Repository.UserRepository;
@@ -101,7 +103,7 @@ public class StudentRegistration extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 490, 140, 30);
 
-        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BSIT", "BSED" }));
+        UserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BS in Information Technology", "BSED" }));
         UserRole.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
         UserRole.addActionListener(this::UserRoleActionPerformed);
         jPanel1.add(UserRole);
@@ -279,37 +281,46 @@ public class StudentRegistration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String firstName = UserFirstname.getText();
-        String lastName = UserLastname.getText();
-        String email = UserEmail.getText();
-        String password = UserPassword.getText();
-        String confirmPassword = UserConfirmPassword.getText();
-        String role = UserRole.getSelectedItem().toString();
-        
-        Roles roles = new Roles();
-        //roles.setId(role);
-        
-        User user = new User();
-        user.setFirstname(firstName);
-        user.setLastname(lastName);
-        user.setEmail(email);
-        user.setPassword(password);
-        //user.setRoleId(roles.getId());
-        
-        UserRepository repo = new UserRepository();
-        
         try {
-            repo.addUser(user);
-            
+            String firstName = UserFirstname.getText();
+            String lastName = UserLastname.getText();
+            String email = UserEmail.getText();
+            String password = UserPassword.getText();
+            String confirmPassword = UserConfirmPassword.getText();
+
+            String courseName = UserRole.getSelectedItem().toString();
+
+            if (!password.equals(confirmPassword)) {
+                Alert.showError("Password and Confirm Password do not match");
+                return;
+            }
+
+            Roles roles = new Roles();
+            roles.setId(3); // better if dynamic later
+
+            Courses courses = new Courses();
+            courses.setName(courseName);
+
+            User user = new User();
+            user.setFirstname(firstName);
+            user.setLastname(lastName);
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setRoles(roles);
+            user.setCourses(courses);
+
+            UserRepository repo = new UserRepository();
+
+            repo.addStudent(user);
+
             UserFirstname.setText("");
             UserLastname.setText("");
             UserEmail.setText("");
             UserPassword.setText("");
             UserConfirmPassword.setText("");
-        } catch (SQLException ex) {
-            Alert.showError(ex.getMessage());
-//            Alert.showError("Email already Taken !");
-//            Alert.showError("Fill all the blank and check password match");
+
+        } catch (SQLException | IllegalArgumentException e) {
+            Alert.showError(e.getMessage());
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

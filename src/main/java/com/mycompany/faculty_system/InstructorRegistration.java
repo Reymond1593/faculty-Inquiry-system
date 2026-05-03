@@ -4,6 +4,7 @@
  */
 package com.mycompany.faculty_system;
 
+import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Repository.UserRepository;
@@ -279,37 +280,46 @@ public class InstructorRegistration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String firstName = UserFirstname.getText();
-        String lastName = UserLastname.getText();
-        String email = UserEmail.getText();
-        String password = UserPassword.getText();
-        String confirmPassword = UserConfirmPassword.getText();
-        String role = UserRole.getSelectedItem().toString();
-        
-        Roles roles = new Roles();
-        //roles.setId(role);
-        
-        User user = new User();
-        user.setFirstname(firstName);
-        user.setLastname(lastName);
-        user.setEmail(email);
-        user.setPassword(password);
-        //user.setRoleId(roles.getId());
-        
-        UserRepository repo = new UserRepository();
-        
         try {
-            repo.addUser(user);
-            
+            String firstName = UserFirstname.getText();
+            String lastName = UserLastname.getText();
+            String email = UserEmail.getText();
+            String password = UserPassword.getText();
+            String confirmPassword = UserConfirmPassword.getText();
+
+            String departmentName = UserRole.getSelectedItem().toString(); // rename for clarity
+
+            if (!password.equals(confirmPassword)) {
+                Alert.showError("Password and Confirm Password do not match");
+                return;
+            }
+
+            Roles roles = new Roles();
+            roles.setId(2); // better if dynamic later
+
+            Departments department = new Departments();
+            department.setName(departmentName);
+
+            User user = new User();
+            user.setFirstname(firstName);
+            user.setLastname(lastName);
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setRoles(roles);
+            user.setDepartments(department);
+
+            UserRepository repo = new UserRepository();
+
+            repo.addInstructor(user);
+
             UserFirstname.setText("");
             UserLastname.setText("");
             UserEmail.setText("");
             UserPassword.setText("");
             UserConfirmPassword.setText("");
-        } catch (SQLException ex) {
-            Alert.showError(ex.getMessage());
-//            Alert.showError("Email already Taken !");
-//            Alert.showError("Fill all the blank and check password match");
+
+        } catch (SQLException | IllegalArgumentException e) {
+            Alert.showError(e.getMessage());
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
