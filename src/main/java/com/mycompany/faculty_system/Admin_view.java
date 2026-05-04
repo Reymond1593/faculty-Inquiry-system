@@ -60,11 +60,11 @@ public class Admin_view extends javax.swing.JFrame {
         admin_views = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 500));
+        setPreferredSize(new java.awt.Dimension(1200, 600));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setPreferredSize(new java.awt.Dimension(900, 500));
+        jPanel4.setPreferredSize(new java.awt.Dimension(900, 600));
         jPanel4.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
@@ -153,7 +153,7 @@ public class Admin_view extends javax.swing.JFrame {
 
         admin_views.setBackground(new java.awt.Color(255, 255, 255));
         admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
-        admin_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        admin_views.setLayout(new java.awt.GridBagLayout());
         jPanel4.add(admin_views);
         admin_views.setBounds(230, 10, 900, 480);
 

@@ -151,7 +151,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jPanel1.add(jButton1, gridBagConstraints);
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel7.setPreferredSize(new java.awt.Dimension(900, 120));
+        jPanel7.setPreferredSize(new java.awt.Dimension(500, 120));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -164,7 +164,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel13.setText("DEPARTMENT");
         jPanel8.add(jLabel13);
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 150, 30));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 120, 30));
 
         jPanel9.setBackground(new java.awt.Color(102, 153, 255));
         jPanel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -174,7 +174,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel11.setText("NAME");
         jPanel9.add(jLabel11);
 
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 310, 30));
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, 30));
 
         jPanel10.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -182,26 +182,25 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel12.setText("E-MAIL");
         jPanel10.add(jLabel12);
 
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 120, 30));
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 80, 30));
 
         jLabel14.setBackground(new java.awt.Color(153, 153, 153));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 34)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Manage Instructor");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 840, -1));
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 640, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("ACTIONS");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 200, 30));
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 200, 30));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 49;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
@@ -214,7 +213,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 883;
         gridBagConstraints.ipady = 324;
