@@ -224,7 +224,8 @@ public class Login_View extends javax.swing.JFrame {
             }
             if (roles.getId() == 1){
                 this.dispose();
-                Admin_view view = new Admin_view();
+                //Admin_view view = new Admin_view();
+                UserFrame view = new UserFrame();
                 view.setProfile(dbUser);
                 view.pack();
                 view.setLocationRelativeTo(null);

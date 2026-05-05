@@ -6,6 +6,8 @@ com\mycompany\faculty_system\Admin\Admin_manage_student$1.class
 com\mycompany\faculty_system\Repository\getCoursesIdByName.class
 com\mycompany\faculty_system\InstructorRegistration$2.class
 com\mycompany\faculty_system\Admin\Admin_manage_instructors.class
+com\mycompany\faculty_system\Utilities\UserFrameButton$1.class
+com\mycompany\faculty_system\UserFrame.class
 com\mycompany\faculty_system\Admin\Instructor_add_students.class
 com\mycompany\faculty_system\Admin\instructor_dashboard.class
 com\mycompany\faculty_system\Login_View$2.class
@@ -36,14 +38,17 @@ com\mycompany\faculty_system\Utilities\Alert.class
 com\mycompany\faculty_system\Repository\getUserByEmail_Password.class
 com\mycompany\faculty_system\Faculty_system.class
 com\mycompany\faculty_system\Connection\DbConnector.class
+com\mycompany\faculty_system\Utilities\RoundedBorder.class
+com\mycompany\faculty_system\Utilities\AdminMenu.class
+com\mycompany\faculty_system\Utilities\UserFrameButton.class
 com\mycompany\faculty_system\Admin\test.class
 com\mycompany\faculty_system\StudentRegistration$1.class
 com\mycompany\faculty_system\student_view.class
 com\mycompany\faculty_system\Admin\Admin_add_departments.class
+com\mycompany\faculty_system\Utilities\UserFrameComboBox.class
 com\mycompany\faculty_system\Admin\edit_student_profile.class
-<<<<<<< HEAD
-=======
 com\mycompany\faculty_system\Repository\addStudent.class
+com\mycompany\faculty_system\Utilities\UserFrameComboBox$1.class
 com\mycompany\faculty_system\Model\Courses.class
+com\mycompany\faculty_system\Components\UserComponents.class
 com\mycompany\faculty_system\Model\Departments.class
->>>>>>> f79d08c72772d6a6b75a1f4524fe8a39a24b191f
