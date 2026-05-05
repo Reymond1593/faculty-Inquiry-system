@@ -122,17 +122,17 @@ public class student_view extends javax.swing.JFrame {
         role.setText("Student");
         jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, -1));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 530));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
 
         students_views.setBackground(new java.awt.Color(255, 255, 255));
         students_views.setPreferredSize(new java.awt.Dimension(600, 500));
         students_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(students_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 450, 530));
+        jPanel4.add(students_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 630, -1));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = -188;
+        gridBagConstraints.ipadx = -241;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         getContentPane().add(jPanel4, gridBagConstraints);
 
