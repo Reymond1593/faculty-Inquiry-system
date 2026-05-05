@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> v1
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Admin_add_departments.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Admin_add_instructors.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Admin_add_student.java
@@ -15,7 +18,10 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Student_view_instructor.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\test.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin_view.java
+<<<<<<< HEAD
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Components\UserComponents.java
+=======
+>>>>>>> v1
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Connection\DbConnector.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Faculty_system.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\instructor_view.java
@@ -34,6 +40,7 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Service\ValidateUser.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\student_view.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\StudentRegistration.java
+<<<<<<< HEAD
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\UserFrame.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\UserRole.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\AdminMenu.java
@@ -81,3 +88,8 @@ C:\Users\reymo\OneDrive\Desktop\NetBeansProjects\faculty-Inquiry-system\src\main
 C:\Users\reymo\OneDrive\Desktop\NetBeansProjects\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\Alert.java
 C:\Users\reymo\OneDrive\Desktop\NetBeansProjects\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\PasswordUtil.java
 >>>>>>> origin/reymond-design
+=======
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\UserRole.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\Alert.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Utilities\PasswordUtil.java
+>>>>>>> v1
