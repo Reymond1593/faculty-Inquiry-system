@@ -41,6 +41,7 @@ public class student_view extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -54,9 +55,11 @@ public class student_view extends javax.swing.JFrame {
         students_views = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 500));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1000, 600));
+        jPanel4.setPreferredSize(new java.awt.Dimension(900, 500));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 102));
@@ -117,27 +120,21 @@ public class student_view extends javax.swing.JFrame {
         role.setForeground(new java.awt.Color(255, 255, 255));
         role.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         role.setText("Student");
-        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
+        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, -1));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 560));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 530));
 
         students_views.setBackground(new java.awt.Color(255, 255, 255));
         students_views.setPreferredSize(new java.awt.Dimension(600, 500));
         students_views.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(students_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 600, 550));
+        jPanel4.add(students_views, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 450, 530));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -188;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(jPanel4, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

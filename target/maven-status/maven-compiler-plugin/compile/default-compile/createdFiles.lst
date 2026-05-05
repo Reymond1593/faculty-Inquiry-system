@@ -50,5 +50,8 @@ com\mycompany\faculty_system\Admin\edit_student_profile.class
 com\mycompany\faculty_system\Repository\addStudent.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox$1.class
 com\mycompany\faculty_system\Model\Courses.class
+<<<<<<< HEAD
 com\mycompany\faculty_system\Components\UserComponents.class
+=======
+>>>>>>> origin/reymond-design
 com\mycompany\faculty_system\Model\Departments.class
