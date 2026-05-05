@@ -2,6 +2,7 @@ com\mycompany\faculty_system\InstructorRegistration.class
 com\mycompany\faculty_system\Admin\edit_instructor_profile.class
 com\mycompany\faculty_system\Admin\Student_dashboard.class
 com\mycompany\faculty_system\Login_View$1.class
+com\mycompany\faculty_system\Utilities\StudentMenu.class
 com\mycompany\faculty_system\Admin\Admin_manage_student$1.class
 com\mycompany\faculty_system\Repository\getCoursesIdByName.class
 com\mycompany\faculty_system\InstructorRegistration$2.class
@@ -44,14 +45,12 @@ com\mycompany\faculty_system\Utilities\UserFrameButton.class
 com\mycompany\faculty_system\Admin\test.class
 com\mycompany\faculty_system\StudentRegistration$1.class
 com\mycompany\faculty_system\student_view.class
+com\mycompany\faculty_system\Utilities\InstructorMenu.class
 com\mycompany\faculty_system\Admin\Admin_add_departments.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox.class
 com\mycompany\faculty_system\Admin\edit_student_profile.class
 com\mycompany\faculty_system\Repository\addStudent.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox$1.class
 com\mycompany\faculty_system\Model\Courses.class
-<<<<<<< HEAD
 com\mycompany\faculty_system\Components\UserComponents.class
-=======
->>>>>>> origin/reymond-design
 com\mycompany\faculty_system\Model\Departments.class

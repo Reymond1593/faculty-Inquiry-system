@@ -153,10 +153,7 @@ public class Admin_view extends javax.swing.JFrame {
 
         admin_views.setBackground(new java.awt.Color(255, 255, 255));
         admin_views.setPreferredSize(new java.awt.Dimension(600, 500));
-<<<<<<< HEAD
-=======
         admin_views.setLayout(new java.awt.GridBagLayout());
->>>>>>> v1
         jPanel4.add(admin_views);
         admin_views.setBounds(230, 10, 900, 480);
 

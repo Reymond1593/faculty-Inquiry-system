@@ -16,6 +16,8 @@ import com.mycompany.faculty_system.Components.UserComponents;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Utilities.AdminMenu;
+import com.mycompany.faculty_system.Utilities.InstructorMenu;
+import com.mycompany.faculty_system.Utilities.StudentMenu;
 import com.mycompany.faculty_system.Utilities.UserFrameButton;
 import com.mycompany.faculty_system.Utilities.UserFrameComboBox;
 import java.awt.Dimension;
@@ -30,7 +32,7 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    private String userRole = "admin";
+    private String userRole = "indtructor";
     
     public UserFrame() {
         initComponents();
@@ -38,19 +40,6 @@ public class UserFrame extends javax.swing.JFrame {
         jPanel4.add(sidebar, java.awt.BorderLayout.WEST);
         jPanel4.add(userViews, java.awt.BorderLayout.CENTER);
         configureUser();
-//        UserButtonContainer.setLayout(new java.awt.FlowLayout(
-//            java.awt.FlowLayout.CENTER, 10, 10
-//        ));
-
-        // Add button
-        
-//        admin_dashboard dashboard = new admin_dashboard();
-//        admin_views.setLayout(new java.awt.BorderLayout());
-//        admin_views.add(dashboard, java.awt.BorderLayout.CENTER);
-//
-//        admin_views.revalidate();
-//        admin_views.repaint();
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -178,14 +167,23 @@ public class UserFrame extends javax.swing.JFrame {
     
     private void configureUser() {
 
-        if (!userRole.equals("admin")) return;
+        switch (userRole) {
+            case "admin" -> {
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.handle(UserButtonContainer, this::switchView);
+            }
 
-        AdminMenu menu = new AdminMenu();
+            case "instructor" -> {
+                InstructorMenu instructorMenu = new InstructorMenu();
+                instructorMenu.handle(UserButtonContainer, this::switchView);
+            }
+            
+            case "student" -> {
+                StudentMenu studentMenu = new StudentMenu();
+                studentMenu.handle(UserButtonContainer, this::switchView);
+            }
+        }
 
-        menu.handle(UserButtonContainer, this::switchView);
-
-//        UserButtonContainer.revalidate();
-//        UserButtonContainer.repaint();
     }
 
 }
