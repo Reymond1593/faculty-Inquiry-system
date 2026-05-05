@@ -48,6 +48,7 @@ public class Admin_add_departments extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
+<<<<<<< HEAD
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\reymo\\Downloads\\corporation (2).png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 140));
 
@@ -57,6 +58,17 @@ public class Admin_add_departments extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("ADD");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 80, 40));
+=======
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setText("Add Department");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 470, 140));
+
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.setText("Course Code");
+        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 2, true));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 38));
+>>>>>>> e1fbb29aa002c58570f60feb0b3400dc846fa47b
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,6 +79,10 @@ public class Admin_add_departments extends javax.swing.JPanel {
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 2, true));
+<<<<<<< HEAD
+=======
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 450, 38));
+>>>>>>> e1fbb29aa002c58570f60feb0b3400dc846fa47b
 
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
