@@ -32,14 +32,12 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    private String userRole = "admin";
     
     public UserFrame() {
         initComponents();
         jPanel4.setLayout(new java.awt.BorderLayout());
         jPanel4.add(sidebar, java.awt.BorderLayout.WEST);
         jPanel4.add(userViews, java.awt.BorderLayout.CENTER);
-        configureUser();
     }
 
     @SuppressWarnings("unchecked")
@@ -153,9 +151,7 @@ public class UserFrame extends javax.swing.JFrame {
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 
-    void setProfile(User user){
-        this.userRole = user.getRoles().getName();
-    }
+
     private void switchView(JPanel panel) {
         userViews.removeAll();
         userViews.setLayout(new java.awt.BorderLayout());
@@ -164,25 +160,29 @@ public class UserFrame extends javax.swing.JFrame {
         userViews.repaint();
     }
     
-    private void configureUser() {
+    public void configureUser(String userRole) {
 
         switch (userRole) {
-            case "admin" -> {
+            case "Admin" -> {
                 AdminMenu adminMenu = new AdminMenu();
                 adminMenu.handle(UserButtonContainer, this::switchView);
             }
 
-            case "instructor" -> {
+            case "Instructor" -> {
                 InstructorMenu instructorMenu = new InstructorMenu();
                 instructorMenu.handle(UserButtonContainer, this::switchView);
             }
             
-            case "student" -> {
+            case "Student" -> {
                 StudentMenu studentMenu = new StudentMenu();
                 studentMenu.handle(UserButtonContainer, this::switchView);
             }
         }
 
+    }
+
+    public void setProfile(User dbUser) {
+        //
     }
 
 }

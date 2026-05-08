@@ -4,7 +4,10 @@
  */
 package com.mycompany.faculty_system.Repository;
 
+import com.mycompany.faculty_system.Components.ComboItem;
 import com.mycompany.faculty_system.Connection.DbConnector;
+import com.mycompany.faculty_system.Model.Courses;
+import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Service.ValidateUser;
@@ -21,17 +24,46 @@ import javax.swing.JOptionPane;
  */
 public class UserRepository {
     
-    public void addInstructor(User user) throws SQLException {
+    public void addInstructor(String user_firstName, String user_lastName, String user_email, String user_password, ComboItem selectedItem, int roleId) throws SQLException {
+        User user = new User();
+        Departments newDepartments = new Departments();
+        newDepartments.setId(selectedItem.getId());
+        newDepartments.setName(selectedItem.getName());
+        
+        user.setFirstname(user_firstName);
+        user.setLastname(user_lastName);
+        user.setEmail(user_email);
+        user.setPassword(user_password);
+        user.setDepartments(newDepartments);
         addInstructor add = new addInstructor();
         add.handle(user);
     }
-    public void addStudent(User user) throws SQLException {
+    
+    public void addStudent(String user_firstName, String user_lastName, String user_email, String user_password, ComboItem selectedItem, int roleId) throws SQLException {
+        User user = new User();
+        Courses newCourses = new Courses();
+        Roles roles = new Roles();
+        newCourses.setId(selectedItem.getId());
+        newCourses.setName(selectedItem.getName());
+        roles.setId(roleId);
+        
+        user.setFirstname(user_firstName);
+        user.setLastname(user_lastName);
+        user.setEmail(user_email);
+        user.setPassword(user_password);
+        user.setCourses(newCourses);
+        user.setRoles(roles);
+
         addStudent add = new addStudent();
         add.handle(user);
     }
 
-    public User getUser(User user) throws SQLException {
+    public User getUser(String email,  String password) throws SQLException {
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(password);
         getUserByEmail_Password get = new getUserByEmail_Password();
+        
         return get.handle(user);
     }
     
