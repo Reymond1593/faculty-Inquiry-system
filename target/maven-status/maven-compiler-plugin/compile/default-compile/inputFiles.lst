@@ -7,7 +7,11 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\Admin_manage_student.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\edit_instructor_profile.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\edit_student_profile.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\UpdateUserPanel.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Admin\ViewUserPanel.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Components\InstructorRow.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Components\UserComponents.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Components\UserDialogUI.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Connection\DbConnector.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Faculty_system.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Instructor\Instructor_add_students.java
@@ -17,6 +21,7 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Login_View.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Courses.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Departments.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Instructor.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\Roles.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Model\User.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\addInstructor.java
@@ -25,6 +30,7 @@ C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\facul
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\getDepartmentIdByName.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\getUserByEmail_Password.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Repository\UserRepository.java
+C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Service\InstructorService.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Service\ValidateUser.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Student\Student_dashboard.java
 C:\Users\arjay\OneDrive\faculty-Inquiry-system\src\main\java\com\mycompany\faculty_system\Student\Student_view_instructor.java

@@ -32,7 +32,7 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    private String userRole;
+    private String userRole = "admin";
     
     public UserFrame() {
         initComponents();
@@ -183,10 +183,6 @@ public class UserFrame extends javax.swing.JFrame {
             }
         }
 
-    }
-
-    void setRole(String roles) {
-        this.userRole = roles;
     }
 
 }

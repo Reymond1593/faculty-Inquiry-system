@@ -1,7 +1,9 @@
 com\mycompany\faculty_system\InstructorRegistration.class
+com\mycompany\faculty_system\Components\UserDialogUI.class
 com\mycompany\faculty_system\Admin\edit_instructor_profile.class
 com\mycompany\faculty_system\Login_View$1.class
 com\mycompany\faculty_system\Utilities\StudentMenu.class
+com\mycompany\faculty_system\Components\InstructorRow.class
 com\mycompany\faculty_system\Repository\getCoursesIdByName.class
 com\mycompany\faculty_system\Admin\Admin_manage_instructors.class
 com\mycompany\faculty_system\Instructor\Instructor_add_students.class
@@ -19,6 +21,7 @@ com\mycompany\faculty_system\Utilities\PasswordUtil.class
 com\mycompany\faculty_system\Repository\getDepartmentIdByName.class
 com\mycompany\faculty_system\Student\Student_view_instructor$1.class
 com\mycompany\faculty_system\Student\Student_view_instructor.class
+com\mycompany\faculty_system\Service\InstructorService.class
 com\mycompany\faculty_system\Student\Student_dashboard.class
 com\mycompany\faculty_system\Admin\admin_dashboard.class
 com\mycompany\faculty_system\StudentRegistration$2.class
@@ -30,11 +33,14 @@ com\mycompany\faculty_system\Service\ValidateUser.class
 com\mycompany\faculty_system\Login_View.class
 com\mycompany\faculty_system\Utilities\Alert.class
 com\mycompany\faculty_system\Repository\getUserByEmail_Password.class
+com\mycompany\faculty_system\Admin\UpdateUserPanel.class
 com\mycompany\faculty_system\Faculty_system.class
 com\mycompany\faculty_system\Connection\DbConnector.class
+com\mycompany\faculty_system\Model\Instructor.class
 com\mycompany\faculty_system\Utilities\RoundedBorder.class
 com\mycompany\faculty_system\Utilities\AdminMenu.class
 com\mycompany\faculty_system\Utilities\UserFrameButton.class
+com\mycompany\faculty_system\Admin\ViewUserPanel.class
 com\mycompany\faculty_system\StudentRegistration$1.class
 com\mycompany\faculty_system\Utilities\InstructorMenu.class
 com\mycompany\faculty_system\Admin\Admin_add_departments.class
