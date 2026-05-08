@@ -38,9 +38,6 @@ public class getUserByEmail_Password {
         if(!PasswordUtil.verifyPassword(password, dbPassword)){
             throw new SQLException("Wrong email and Password");  
         }
-//        if(!password.equals(dbPassword)){
-//            throw new SQLException("Wrong email and Password");  
-//        }
         
         Roles roles = new Roles();
         roles.setId(rs.getInt("role_id"));

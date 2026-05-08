@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 
 public class Faculty_system {
     public static void main(String[] args){
-        UserFrame role = new UserFrame();
-        //Login_View role = new Login_View();
+        //UserFrame role = new UserFrame();
+        UserLogin role = new UserLogin();
         role.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         role.pack();
         role.setLocationRelativeTo(null);

@@ -7,6 +7,7 @@ package com.mycompany.faculty_system;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Repository.UserRepository;
+import com.mycompany.faculty_system.Service.UserService;
 import com.mycompany.faculty_system.Utilities.Alert;
 import java.sql.SQLException;
 
@@ -14,14 +15,14 @@ import java.sql.SQLException;
  *
  * @author reymo
  */
-public class Login_View extends javax.swing.JFrame {
+public class UserLogin extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login_View.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserLogin.class.getName());
 
     /**
      * Creates new form Login_View
      */
-    public Login_View() {
+    public UserLogin() {
         initComponents();
     }
 
@@ -204,25 +205,12 @@ public class Login_View extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+            String user_email = email.getText();
+            String user_password = password.getText();
             
-            User user = new User();
-            user.setEmail(email.getText());
-            user.setPassword(password.getText());
+            UserService service = new UserService();
+            service.loginUser(user_email, user_password, evt);
             
-            UserRepository repo = new UserRepository();
-        try {
-            User dbUser = repo.getUser(user);
-            
-            this.dispose();
-            UserFrame frame = new UserFrame();
-            frame.setProfile(dbUser);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);         
-        } catch (SQLException ex) {
-            Alert.showError(ex.getMessage());
-        }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel4KeyPressed
@@ -235,7 +223,6 @@ public class Login_View extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        
             this.dispose();
             UserRole view = new UserRole();
 
@@ -267,7 +254,7 @@ public class Login_View extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Login_View().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new UserLogin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
