@@ -5,23 +5,26 @@
 package com.mycompany.faculty_system.Model;
 
 
-public class Instructor {
-
+public class UserUI {
+    private int id;
     private String name;
     private String email;
     private String department;
 
-    public Instructor(
+    public UserUI(
+            int id,
             String name,
             String email,
             String department
     ) {
-
+        this.id = id;
         this.name = name;
         this.email = email;
         this.department = department;
     }
-
+    public int getId(){
+        return id;
+    }
     public String getName() {
         return name;
     }

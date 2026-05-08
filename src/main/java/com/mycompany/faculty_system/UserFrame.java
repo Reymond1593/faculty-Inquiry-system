@@ -5,10 +5,7 @@
 package com.mycompany.faculty_system;
 
 import com.mycompany.faculty_system.Admin.Admin_add_departments;
-import com.mycompany.faculty_system.Admin.Admin_add_instructors;
-import com.mycompany.faculty_system.Admin.Admin_add_student;
 import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
-import com.mycompany.faculty_system.Admin.Admin_manage_student;
 import com.mycompany.faculty_system.Student.Student_dashboard;
 import com.mycompany.faculty_system.Admin.admin_dashboard;
 import com.mycompany.faculty_system.Instructor.Instructor_manage_students;
@@ -21,6 +18,7 @@ import com.mycompany.faculty_system.Utilities.StudentMenu;
 import com.mycompany.faculty_system.Utilities.UserFrameButton;
 import com.mycompany.faculty_system.Utilities.UserFrameComboBox;
 import java.awt.Dimension;
+import java.sql.SQLException;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,7 +30,7 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    
+    private User user;
     public UserFrame() {
         initComponents();
         jPanel4.setLayout(new java.awt.BorderLayout());
@@ -85,6 +83,8 @@ public class UserFrame extends javax.swing.JFrame {
         role.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         role.setText("Administrator");
         sidebar.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
+
+        UserButtonContainer.setBackground(new java.awt.Color(51, 51, 255));
         sidebar.add(UserButtonContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 200, 270));
 
         jButton1.setText("Logout");
@@ -159,13 +159,15 @@ public class UserFrame extends javax.swing.JFrame {
         userViews.revalidate();
         userViews.repaint();
     }
-    
-    public void configureUser(String userRole) {
+    public void setUser(User user){
+        this.user = user;
+    }
+    public void configureUser(String userRole) throws SQLException {
 
         switch (userRole) {
             case "Admin" -> {
                 AdminMenu adminMenu = new AdminMenu();
-                adminMenu.handle(UserButtonContainer, this::switchView);
+                adminMenu.handle(UserButtonContainer, this::switchView, user);
             }
 
             case "Instructor" -> {

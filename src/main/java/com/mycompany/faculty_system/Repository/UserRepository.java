@@ -8,6 +8,7 @@ import com.mycompany.faculty_system.Components.ComboItem;
 import com.mycompany.faculty_system.Connection.DbConnector;
 import com.mycompany.faculty_system.Model.Courses;
 import com.mycompany.faculty_system.Model.Departments;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Service.ValidateUser;
@@ -16,6 +17,7 @@ import com.mycompany.faculty_system.Utilities.PasswordUtil;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -65,6 +67,19 @@ public class UserRepository {
         getUserByEmail_Password get = new getUserByEmail_Password();
         
         return get.handle(user);
+    }
+    public ArrayList<UserUI> getInstructorList() throws SQLException{
+        getAllInstructor getAll = new getAllInstructor();
+        return getAll.handle();
+    }
+    public ArrayList<UserUI> getStudentsList() throws SQLException{
+        getAllStudents getAll = new getAllStudents();
+        return getAll.handle();
+    }
+
+    public void updateUser(User user, int userId) throws SQLException {
+        updateUser update = new updateUser();
+        update.handle(user, userId);
     }
     
 }

@@ -16,19 +16,13 @@ public class InstructorMenu {
             buttonContainer,
             () -> switchView.accept(new admin_dashboard())
         );
+//        components.addButton(
+//            "Manage Students",
+//            buttonContainer,
+//            () -> switchView.accept(new Admin_manage_instructors(instructor))
+//        );
 
 
-        components.addCombo(
-            new String[] { "Student", "Add Student", "Manage Student" },
-            buttonContainer,
-            selected -> {
-                if (selected.equals("Add Student")) {
-                    switchView.accept(new Admin_add_student());
-                } else if (selected.equals("Manage Student")) {
-                    switchView.accept(new Admin_manage_student());
-                }
-            }
-        );
         
         components.addButton(
             "Edit Profile",

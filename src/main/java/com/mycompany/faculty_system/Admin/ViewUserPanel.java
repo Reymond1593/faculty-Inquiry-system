@@ -4,7 +4,7 @@
  */
 package com.mycompany.faculty_system.Admin;
 
-import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.User;
 
 /**
@@ -81,7 +81,7 @@ public class ViewUserPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setViewUser(Instructor instructor) {
+    public void setViewUser(UserUI instructor) {
         firstname.setText(instructor.getName());
         email.setText(instructor.getEmail());
         departments.setText(instructor.getDepartment());

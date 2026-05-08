@@ -16,14 +16,14 @@ import java.util.ArrayList;
  *
  * @author reymo
  */
-public class Admin_manage_instructors extends javax.swing.JPanel {
+public class Admin_manage_students extends javax.swing.JPanel {
 
-ArrayList<UserUI> instructorList;
+ArrayList<UserUI> studentList;
 
-public Admin_manage_instructors() throws SQLException {
+public Admin_manage_students() throws SQLException {
     initComponents();
     AdminService service = new AdminService();
-    this.instructorList = service.getInstructorList();
+    this.studentList = service.getStudentsList();
     refreshInstructorList();
 }
 public void refreshInstructorList() {
@@ -37,12 +37,12 @@ public void refreshInstructorList() {
             )
     );
 
-    for (UserUI instructor : instructorList) {
+    for (UserUI instructor : studentList) {
 
         InstructorRow row =
                 new InstructorRow(
                         instructor,
-                        instructorList,
+                        studentList,
                         this::refreshInstructorList
                 );
 
@@ -76,7 +76,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
 
         InstructorRow row = new InstructorRow(
                 instructor,
-                instructorList,
+                studentList,
                 this::refreshInstructorList
         );
 
@@ -160,7 +160,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         jPanel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("DEPARTMENT");
+        jLabel13.setText("COURSE");
         jPanel8.add(jLabel13);
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, 30));
@@ -187,7 +187,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 34)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Manage Instructor");
+        jLabel14.setText("Manage Students");
         jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 770, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -234,7 +234,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
             String keyword = search_txt.getText();
 
             ArrayList<UserUI> filtered =
-                    InstructorService.searchInstructors(instructorList, keyword);
+                    InstructorService.searchInstructors(studentList, keyword);
 
             refreshFilteredList(filtered);
     }//GEN-LAST:event_search_actionActionPerformed
