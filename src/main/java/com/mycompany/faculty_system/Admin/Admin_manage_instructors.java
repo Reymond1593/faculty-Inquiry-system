@@ -4,8 +4,11 @@
  */
 package com.mycompany.faculty_system.Admin;
 
+import com.mycompany.faculty_system.Components.InstructorRow;
+import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Service.InstructorService;
+import java.awt.Dimension;
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,86 +16,105 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Admin_manage_instructors extends javax.swing.JPanel {
 
-    /**
-     * Creates new form manage_instructors
-     */
-    ArrayList<String[]> instructorList = new ArrayList<>();
-    
+ArrayList<Instructor> instructorList = new ArrayList<>();
+
 public Admin_manage_instructors() {
+
     initComponents();
-    
-    // Example Data (Add as many as you want to test scrolling)
-    instructorList.add(new String[]{"Reymond", "rey@email.com", "IT"});
-    instructorList.add(new String[]{"Jane Doe", "jane@email.com", "CS"});
-    instructorList.add(new String[]{"Mark Wood", "mark@email.com", "Engineering"});
-    instructorList.add(new String[]{"Sarah Lee", "sarah@email.com", "HR"});
-    instructorList.add(new String[]{"Tom Cruise", "tom@email.com", "Theater"});
-    instructorList.add(new String[]{"Tony Stark", "iron@email.com", "Physics"});
 
-    // Run the method to display them
-    refreshInstructorList(instructorList);
+    // SAMPLE DATA
+    instructorList.add(
+            new Instructor(
+                    "Reymond",
+                    "rey@email.com",
+                    "IT"
+            )
+    );
+
+    instructorList.add(
+            new Instructor(
+                    "Jane Doe",
+                    "jane@email.com",
+                    "CS"
+            )
+    );
+
+    instructorList.add(
+            new Instructor(
+                    "Tony Stark",
+                    "iron@email.com",
+                    "Physics"
+            )
+    );
+
+    refreshInstructorList();
 }
-    
-private javax.swing.JPanel createRow(String name, String email, String dept) {
-    javax.swing.JPanel row = new javax.swing.JPanel();
-    row.setBackground(java.awt.Color.BLACK);
-    
-    // Set fixed height so they stack correctly
-    row.setPreferredSize(new java.awt.Dimension(680, 60));
-    row.setMaximumSize(new java.awt.Dimension(32767, 60));
-    row.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+public void refreshInstructorList() {
 
-    // 1. Name Label (Aligned under the 'Name' header)
-    javax.swing.JLabel lblName = new javax.swing.JLabel(name);
-    lblName.setForeground(java.awt.Color.WHITE);
-    // Adjusted X to 20 to match your header
-    row.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 40));
-
-    // 2. Email Label (Aligned under 'E-Mail')
-    javax.swing.JLabel lblEmail = new javax.swing.JLabel(email);
-    lblEmail.setForeground(java.awt.Color.WHITE);
-    // Adjusted X to 170
-    row.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 110, 40));
-
-    // 3. Department Label (Aligned under 'Departments')
-    javax.swing.JLabel lblDept = new javax.swing.JLabel(dept);
-    lblDept.setForeground(java.awt.Color.WHITE);
-    // Adjusted X to 290
-    row.add(lblDept, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 120, 40));
-
-    // 4. White Action Box (Aligned under 'Action')
-    javax.swing.JPanel actionBox = new javax.swing.JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 8));
-    actionBox.setBackground(new java.awt.Color(240, 240, 240));
-    actionBox.add(new javax.swing.JButton("View"));
-    actionBox.add(new javax.swing.JButton("Update"));
-    actionBox.add(new javax.swing.JButton("Delete"));
-    // Moved this to the far right (X: 430) so it doesn't cover the text
-    row.add(actionBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 230, 40));
-
-    return row;
-}
-    public void refreshInstructorList(ArrayList<String[]> list) {
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
-    // 1. Remove everything currently in the panel
     jPanel3.removeAll();
 
-    // 2. Loop through your data
-    for (String[] data : list) {
-        // Create the row using our template
-        javax.swing.JPanel instructorRow = createRow(data[0], data[1], data[2]);
-        
-        // Add row to the green container (jPanel2)
-        jPanel3.add(instructorRow);
-        
-        // Add a 10px gap between rows (the green space)
-        jPanel3.add(javax.swing.Box.createRigidArea(new java.awt.Dimension(0, 10)));
+    jPanel3.setLayout(
+            new javax.swing.BoxLayout(
+                    jPanel3,
+                    javax.swing.BoxLayout.Y_AXIS
+            )
+    );
+
+    for (Instructor instructor : instructorList) {
+
+        InstructorRow row =
+                new InstructorRow(
+                        instructor,
+                        instructorList,
+                        this::refreshInstructorList
+                );
+
+        row.setAlignmentX(LEFT_ALIGNMENT);
+
+        jPanel3.add(row);
+
+        jPanel3.add(
+                javax.swing.Box.createRigidArea(
+                        new java.awt.Dimension(0, 10)
+                )
+        );
     }
 
-    // 3. Refresh the UI components
+    jPanel3.revalidate();
+
+    jPanel3.repaint();
+}
+public void refreshFilteredList(ArrayList<Instructor> list) {
+
+    jPanel3.removeAll();
+
+    jPanel3.setLayout(
+            new javax.swing.BoxLayout(
+                    jPanel3,
+                    javax.swing.BoxLayout.Y_AXIS
+            )
+    );
+
+    for (Instructor instructor : list) {
+
+        InstructorRow row = new InstructorRow(
+                instructor,
+                instructorList,
+                this::refreshInstructorList
+        );
+
+        jPanel3.add(row);
+        jPanel3.add(javax.swing.Box.createRigidArea(
+                new java.awt.Dimension(0, 10)
+        ));
+    }
+
     jPanel3.revalidate();
     jPanel3.repaint();
 }
     
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,8 +127,8 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        search_txt = new javax.swing.JTextField();
+        search_action = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -122,13 +144,12 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
 
         setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jTextField1.setText("Search instructor...");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        search_txt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+        search_txt.addActionListener(this::search_txtActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -136,11 +157,12 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        jPanel1.add(jTextField1, gridBagConstraints);
+        jPanel1.add(search_txt, gridBagConstraints);
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 102));
-        jButton1.setText("Search");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        search_action.setBackground(new java.awt.Color(102, 255, 102));
+        search_action.setText("Search");
+        search_action.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        search_action.addActionListener(this::search_actionActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -148,7 +170,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        jPanel1.add(jButton1, gridBagConstraints);
+        jPanel1.add(search_action, gridBagConstraints);
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
         jPanel7.setPreferredSize(new java.awt.Dimension(500, 120));
@@ -164,7 +186,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel13.setText("DEPARTMENT");
         jPanel8.add(jLabel13);
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 120, 30));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, 30));
 
         jPanel9.setBackground(new java.awt.Color(102, 153, 255));
         jPanel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -189,13 +211,13 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Manage Instructor");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 640, -1));
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 770, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("ACTIONS");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 200, 30));
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 200, 30));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -203,7 +225,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
         jPanel1.add(jPanel7, gridBagConstraints);
 
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 300));
@@ -215,25 +237,34 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 883;
-        gridBagConstraints.ipady = 324;
+        gridBagConstraints.ipadx = 799;
+        gridBagConstraints.ipady = 344;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 26, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 6, 0);
         jPanel1.add(jScrollPane2, gridBagConstraints);
 
         add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void search_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_search_txtActionPerformed
+
+    private void search_actionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_actionActionPerformed
+        // TODO add your handling code here:
+            String keyword = search_txt.getText();
+
+            ArrayList<Instructor> filtered =
+                    InstructorService.searchInstructors(instructorList, keyword);
+
+            refreshFilteredList(filtered);
+    }//GEN-LAST:event_search_actionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -247,6 +278,7 @@ private javax.swing.JPanel createRow(String name, String email, String dept) {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton search_action;
+    private javax.swing.JTextField search_txt;
     // End of variables declaration//GEN-END:variables
 }
