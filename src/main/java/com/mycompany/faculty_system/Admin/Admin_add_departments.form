@@ -100,9 +100,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ADD"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="50" width="80" height="40"/>
+              <AbsoluteConstraints x="10" y="100" width="80" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -118,7 +121,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="90" width="270" height="50"/>
+              <AbsoluteConstraints x="100" y="30" width="270" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -133,6 +136,8 @@
               <AbsoluteConstraints x="10" y="160" width="430" height="360"/>
             </Constraint>
           </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="jTextField2">
               <Properties>
