@@ -4,6 +4,9 @@
  */
 package com.mycompany.faculty_system.Admin;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author reymo
@@ -13,10 +16,83 @@ public class Admin_manage_student extends javax.swing.JPanel {
     /**
      * Creates new form manage_instructors
      */
-    public Admin_manage_student() {
-        initComponents();
+    ArrayList<String[]> instructorList = new ArrayList<>();
+    
+public Admin_manage_student() {
+    initComponents();
+    
+    // Example Data (Add as many as you want to test scrolling)
+    instructorList.add(new String[]{"Reymond", "rey@email.com", "IT"});
+    instructorList.add(new String[]{"Jane Doe", "jane@email.com", "CS"});
+    instructorList.add(new String[]{"Mark Wood", "mark@email.com", "Engineering"});
+    instructorList.add(new String[]{"Sarah Lee", "sarah@email.com", "HR"});
+    instructorList.add(new String[]{"Tom Cruise", "tom@email.com", "Theater"});
+    instructorList.add(new String[]{"Tony Stark", "iron@email.com", "Physics"});
+
+    // Run the method to display them
+    refreshInstructorList(instructorList);
+}
+    
+private javax.swing.JPanel createRow(String name, String email, String dept) {
+    javax.swing.JPanel row = new javax.swing.JPanel();
+    row.setBackground(java.awt.Color.BLACK);
+    
+    // Set fixed height so they stack correctly
+    row.setPreferredSize(new java.awt.Dimension(680, 60));
+    row.setMaximumSize(new java.awt.Dimension(32767, 60));
+    row.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    // 1. Name Label (Aligned under the 'Name' header)
+    javax.swing.JLabel lblName = new javax.swing.JLabel(name);
+    lblName.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 20 to match your header
+    row.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 40));
+
+    // 2. Email Label (Aligned under 'E-Mail')
+    javax.swing.JLabel lblEmail = new javax.swing.JLabel(email);
+    lblEmail.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 170
+    row.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 110, 40));
+
+    // 3. Department Label (Aligned under 'Departments')
+    javax.swing.JLabel lblDept = new javax.swing.JLabel(dept);
+    lblDept.setForeground(java.awt.Color.WHITE);
+    // Adjusted X to 290
+    row.add(lblDept, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 120, 40));
+
+    // 4. White Action Box (Aligned under 'Action')
+    javax.swing.JPanel actionBox = new javax.swing.JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 8));
+    actionBox.setBackground(new java.awt.Color(240, 240, 240));
+    actionBox.add(new javax.swing.JButton("View"));
+    actionBox.add(new javax.swing.JButton("Update"));
+    actionBox.add(new javax.swing.JButton("Delete"));
+    // Moved this to the far right (X: 430) so it doesn't cover the text
+    row.add(actionBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 230, 40));
+
+    return row;
+}
+    public void refreshInstructorList(ArrayList<String[]> list) {
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
+    // 1. Remove everything currently in the panel
+    jPanel3.removeAll();
+
+    // 2. Loop through your data
+    for (String[] data : list) {
+        // Create the row using our template
+        javax.swing.JPanel instructorRow = createRow(data[0], data[1], data[2]);
+        
+        // Add row to the green container (jPanel2)
+        jPanel3.add(instructorRow);
+        
+        // Add a 10px gap between rows (the green space)
+        jPanel3.add(javax.swing.Box.createRigidArea(new java.awt.Dimension(0, 10)));
     }
 
+    // 3. Refresh the UI components
+    jPanel3.revalidate();
+    jPanel3.repaint();
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,91 +101,95 @@ public class Admin_manage_student extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel2 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
 
-        setLayout(new java.awt.GridLayout(1, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jTextField2.setText("jTextField2");
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "First Name", "Last Name", "E-Mail"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(330, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(510, Short.MAX_VALUE))
+        );
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 514;
-        gridBagConstraints.ipady = 388;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 10, 18);
-        jPanel1.add(jScrollPane1, gridBagConstraints);
-
-        jTextField1.setText("Search Student...");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 336;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
-        jPanel1.add(jTextField1, gridBagConstraints);
-
-        jButton1.setBackground(new java.awt.Color(102, 255, 102));
-        jButton1.setText("Search");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
-        jPanel1.add(jButton1, gridBagConstraints);
-
-        add(jPanel1);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

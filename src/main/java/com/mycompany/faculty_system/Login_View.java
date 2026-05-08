@@ -212,34 +212,13 @@ public class Login_View extends javax.swing.JFrame {
             UserRepository repo = new UserRepository();
         try {
             User dbUser = repo.getUser(user);
-            Roles roles = dbUser.getRoles();
             
-            if (roles.getId() == 3){
-                this.dispose();
-                student_view view = new student_view();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-            if (roles.getId() == 1){
-                this.dispose();
-                //Admin_view view = new Admin_view();
-                UserFrame view = new UserFrame();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-            if (roles.getId() == 2){
-                this.dispose();
-                instructor_view view = new instructor_view();
-                view.setProfile(dbUser);
-                view.pack();
-                view.setLocationRelativeTo(null);
-                view.setVisible(true);
-            }
-                     
+            this.dispose();
+            UserFrame frame = new UserFrame();
+            frame.setProfile(dbUser);
+            frame.pack();
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);         
         } catch (SQLException ex) {
             Alert.showError(ex.getMessage());
         }

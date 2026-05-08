@@ -9,9 +9,9 @@ import com.mycompany.faculty_system.Admin.Admin_add_instructors;
 import com.mycompany.faculty_system.Admin.Admin_add_student;
 import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
 import com.mycompany.faculty_system.Admin.Admin_manage_student;
-import com.mycompany.faculty_system.Admin.Student_dashboard;
+import com.mycompany.faculty_system.Student.Student_dashboard;
 import com.mycompany.faculty_system.Admin.admin_dashboard;
-import com.mycompany.faculty_system.Admin.Instructor_manage_students;
+import com.mycompany.faculty_system.Instructor.Instructor_manage_students;
 import com.mycompany.faculty_system.Components.UserComponents;
 import com.mycompany.faculty_system.Model.Roles;
 import com.mycompany.faculty_system.Model.User;
@@ -32,7 +32,7 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    private String userRole = "indtructor";
+    private String userRole;
     
     public UserFrame() {
         initComponents();
@@ -138,7 +138,6 @@ public class UserFrame extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new UserFrame().setVisible(true));
     }
@@ -155,7 +154,7 @@ public class UserFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     void setProfile(User user){
-        
+        this.userRole = user.getRoles().getName();
     }
     private void switchView(JPanel panel) {
         userViews.removeAll();
@@ -184,6 +183,10 @@ public class UserFrame extends javax.swing.JFrame {
             }
         }
 
+    }
+
+    void setRole(String roles) {
+        this.userRole = roles;
     }
 
 }

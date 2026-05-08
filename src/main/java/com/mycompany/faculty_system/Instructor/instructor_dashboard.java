@@ -1,8 +1,8 @@
- /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.faculty_system.Admin;
+package com.mycompany.faculty_system.Instructor;
 
 import java.awt.Dimension;
 import javax.swing.JButton;
@@ -11,12 +11,12 @@ import javax.swing.JButton;
  *
  * @author reymo
  */
-public class Student_dashboard extends javax.swing.JPanel {
+public class instructor_dashboard extends javax.swing.JPanel {
 
     /**
      * Creates new form admin_page
      */
-    public Student_dashboard() {
+    public instructor_dashboard() {
         initComponents();
      
     }
