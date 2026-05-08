@@ -4,8 +4,11 @@
  */
 package com.mycompany.faculty_system.Admin;
 
-import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.User;
+import com.mycompany.faculty_system.Service.AdminService;
+import com.mycompany.faculty_system.Utilities.Alert;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +16,8 @@ import javax.swing.JOptionPane;
  * @author arjay
  */
 public class UpdateUserPanel extends javax.swing.JPanel {
+    private int userId;
+    private Runnable refreshCallback;
     
     public UpdateUserPanel() {
         initComponents();
@@ -74,14 +79,26 @@ public class UpdateUserPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String user_firstName = name.getText();
+        String user_lastName = name.getText();
+        String user_email = email.getText();
         
+        AdminService service = new AdminService();
+        try {
+            service.updateUser(user_firstName,user_lastName,user_email, userId);
+            refreshCallback.run();
+        } catch (SQLException ex) {
+            Alert.showError(ex.getMessage());
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public void setUpdateUser(Instructor instructor) {  
+    public void setUpdateUser(UserUI instructor, Runnable refreshCallback) { 
+        this.userId = instructor.getId();
+        this.refreshCallback = refreshCallback;
         name.setText(instructor.getName());
         email.setText(instructor.getEmail());
-        departments.setText(instructor.getDepartment());  
+        departments.setText(instructor.getDepartment());
     }
 
 

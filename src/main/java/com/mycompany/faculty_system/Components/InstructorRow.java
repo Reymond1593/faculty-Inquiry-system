@@ -1,14 +1,14 @@
 package com.mycompany.faculty_system.Components;
 
-import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.InstructorService;
 import java.util.ArrayList;
 
 public class InstructorRow extends javax.swing.JPanel {
 
     public InstructorRow(
-            Instructor instructor,
-            ArrayList<Instructor> instructorList,
+            UserUI instructor,
+            ArrayList<UserUI> instructorList,
             Runnable refreshCallback
     ) {
 

@@ -6,7 +6,7 @@ package com.mycompany.faculty_system.Components;
 
 import com.mycompany.faculty_system.Admin.UpdateUserPanel;
 import com.mycompany.faculty_system.Admin.ViewUserPanel;
-import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.User;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 public class UserDialogUI extends JDialog {
     
-    public void viewHandle(Instructor instructor){
+    public void viewHandle(UserUI instructor){
         
         setTitle("Instructor Details");
         setSize(400, 250);
@@ -32,7 +32,7 @@ public class UserDialogUI extends JDialog {
         setLayout(new java.awt.BorderLayout()); // IMPORTANT
         add(panel, java.awt.BorderLayout.CENTER);
     }
-    public void updateHandle(Instructor instructor){
+    public void updateHandle(UserUI instructor, Runnable refreshCallback){
         
         setTitle("Instructor Details");
         setSize(400, 250);
@@ -40,7 +40,7 @@ public class UserDialogUI extends JDialog {
         setModal(true);
 
         UpdateUserPanel panel = new UpdateUserPanel();
-        panel.setUpdateUser(instructor);
+        panel.setUpdateUser(instructor, refreshCallback);
         
         setLayout(new java.awt.BorderLayout()); // IMPORTANT
         add(panel, java.awt.BorderLayout.CENTER);

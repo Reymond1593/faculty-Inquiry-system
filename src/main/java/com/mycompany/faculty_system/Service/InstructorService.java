@@ -2,7 +2,7 @@ package com.mycompany.faculty_system.Service;
 
 import com.mycompany.faculty_system.Components.UserDialogUI;
 import com.mycompany.faculty_system.Model.Departments;
-import com.mycompany.faculty_system.Model.Instructor;
+import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.User;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -15,23 +15,24 @@ import javax.swing.JTextField;
 public class InstructorService {
 
     // VIEW
-    public static void viewInstructor(Instructor instructor) {
+    public static void viewInstructor(UserUI instructor) {
             UserDialogUI dialog = new UserDialogUI();
             dialog.viewHandle(instructor);
             dialog.setVisible(true);
     }
 
     // UPDATE
-    public static void updateInstructor(Instructor instructor,Runnable refreshCallback) {
+    public static void updateInstructor(UserUI instructor,Runnable refreshCallback) {
             UserDialogUI dialog = new UserDialogUI();
-            dialog.updateHandle(instructor);
+            dialog.updateHandle(instructor,refreshCallback);
+            
             dialog.setVisible(true);
     }
 
     // DELETE
     public static void deleteInstructor(
-            ArrayList<Instructor> instructorList,
-            Instructor instructor,
+            ArrayList<UserUI> instructorList,
+            UserUI instructor,
             Runnable refreshCallback
     ) {
 
@@ -58,12 +59,12 @@ public class InstructorService {
             );
         }
     }
-    public static ArrayList<Instructor> searchInstructors(
-        ArrayList<Instructor> list,
+    public static ArrayList<UserUI> searchInstructors(
+        ArrayList<UserUI> list,
         String keyword
 ) {
 
-    ArrayList<Instructor> result = new ArrayList<>();
+    ArrayList<UserUI> result = new ArrayList<>();
 
     if (keyword == null || keyword.trim().isEmpty()) {
         return list;
@@ -71,7 +72,7 @@ public class InstructorService {
 
     String key = keyword.toLowerCase().trim();
 
-    for (Instructor i : list) {
+    for (UserUI i : list) {
 
         if (i.getName().toLowerCase().contains(key)
                 || i.getEmail().toLowerCase().contains(key)
