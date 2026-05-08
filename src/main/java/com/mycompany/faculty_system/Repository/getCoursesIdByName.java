@@ -18,11 +18,11 @@ public class getCoursesIdByName {
     private DbConnector connector = new DbConnector();
     private int id;
     
-    public void handle(String deptName) throws SQLException {
-        String sql = "SELECT * FROM courses WHERE course_name = ?";
+    public void handle(int couseId) throws SQLException {
+        String sql = "SELECT * FROM courses WHERE course_id = ?";
 
         PreparedStatement ps = connector.database().prepareStatement(sql);
-        ps.setString(1, deptName);
+        ps.setInt(1, couseId);
 
         ResultSet rs = ps.executeQuery();
 

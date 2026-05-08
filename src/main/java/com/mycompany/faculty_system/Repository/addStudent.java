@@ -24,7 +24,7 @@ public class addStudent {
         
         // 👉 get department_id using name
         getCoursesIdByName courseId = new getCoursesIdByName();
-        courseId.handle(user.getCourses().getName());
+        courseId.handle(user.getCourses().getId());
 
 
         String sql = "INSERT INTO users (first_name, last_name, email, password, role_id, course_id) " +

@@ -124,20 +124,12 @@ public class UserRole extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(role.getSelectedItem().toString().equals("Student")){
             this.dispose();
-            StudentRegistration view = new StudentRegistration();
+            UserRegistration view = new UserRegistration();
+            view.setRole(role.getSelectedItem().toString());
             view.pack();
             view.setLocationRelativeTo(null);
             view.setVisible(true);
-        }
-        if(role.getSelectedItem().toString().equals("Instructor")){
-            this.dispose();
-            InstructorRegistration view = new InstructorRegistration();
-            view.pack();
-            view.setLocationRelativeTo(null);
-            view.setVisible(true);
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
