@@ -4,7 +4,7 @@
  */
 package com.mycompany.faculty_system.Admin;
 
-import com.mycompany.faculty_system.Components.InstructorRow;
+import com.mycompany.faculty_system.Components.UserRow;
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.AdminService;
 import com.mycompany.faculty_system.Service.InstructorService;
@@ -39,8 +39,8 @@ public void refreshInstructorList() {
 
     for (UserUI instructor : instructorList) {
 
-        InstructorRow row =
-                new InstructorRow(
+        UserRow row =
+                new UserRow(
                         instructor,
                         instructorList,
                         this::refreshInstructorList
@@ -74,7 +74,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
 
     for (UserUI instructor : list) {
 
-        InstructorRow row = new InstructorRow(
+        UserRow row = new UserRow(
                 instructor,
                 instructorList,
                 this::refreshInstructorList

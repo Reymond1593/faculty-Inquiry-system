@@ -47,15 +47,31 @@ public class AdminMenu {
             buttonContainer,
             selected -> {
                 if (selected.equals("Add Departments")) {
-                    switchView.accept(new Admin_add_departments());
+                    switchView.accept(new AdminAddDepartments());
+                }else if(selected.equals("Manage Departments")){
+                    try {
+                        switchView.accept(new AdminManageDepartments());
+                    } catch (SQLException ex) {
+                        System.getLogger(AdminMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+                    }
                 }
             }
         );
 
         components.addCombo(
-            new String[] { "Courses", "Add Courses", "Manage Courses" },
+            new String[] { "Courses", "Add Course", "Manage Course" },
             buttonContainer,
-            selected -> System.out.println(selected)
+            selected -> {
+                if (selected.equals("Add Course")) {
+                    switchView.accept(new AdminAddCourse());
+                }else if(selected.equals("Manage Course")){
+                    try {
+                        switchView.accept(new AdminManageCourse());
+                    } catch (SQLException ex) {
+                        System.getLogger(AdminMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+                    }
+                }
+            }
         );
     }
 }

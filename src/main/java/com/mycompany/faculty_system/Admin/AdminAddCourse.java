@@ -8,12 +8,10 @@ package com.mycompany.faculty_system.Admin;
  *
  * @author reymo
  */
-public class Admin_add_departments extends javax.swing.JPanel {
+public class AdminAddCourse extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Departments
-     */
-    public Admin_add_departments() {
+    
+    public AdminAddCourse() {
         initComponents();
     }
 

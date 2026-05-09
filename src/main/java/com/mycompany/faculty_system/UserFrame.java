@@ -4,7 +4,7 @@
  */
 package com.mycompany.faculty_system;
 
-import com.mycompany.faculty_system.Admin.Admin_add_departments;
+import com.mycompany.faculty_system.Admin.AdminAddDepartments;
 import com.mycompany.faculty_system.Admin.Admin_manage_instructors;
 import com.mycompany.faculty_system.Student.Student_dashboard;
 import com.mycompany.faculty_system.Admin.admin_dashboard;
@@ -36,11 +36,21 @@ public class UserFrame extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.BorderLayout());
         jPanel4.add(sidebar, java.awt.BorderLayout.WEST);
         jPanel4.add(userViews, java.awt.BorderLayout.CENTER);
+        
+        userViews.setLayout(new java.awt.BorderLayout());
+
+        admin_dashboard dashboard = new admin_dashboard();
+
+        userViews.add(dashboard, java.awt.BorderLayout.CENTER);
+
+        userViews.revalidate();
+        userViews.repaint();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel4 = new javax.swing.JPanel();
         sidebar = new javax.swing.JPanel();
@@ -54,7 +64,8 @@ public class UserFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1140, 500));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1140, 600));
+        jPanel4.setLayout(new java.awt.GridBagLayout());
 
         sidebar.setBackground(new java.awt.Color(0, 0, 102));
         sidebar.setPreferredSize(new java.awt.Dimension(300, 500));
@@ -88,33 +99,45 @@ public class UserFrame extends javax.swing.JFrame {
         sidebar.add(UserButtonContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 200, 270));
 
         jButton1.setText("Logout");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
         sidebar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 35;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
+        jPanel4.add(sidebar, gridBagConstraints);
 
         userViews.setBackground(new java.awt.Color(255, 255, 255));
         userViews.setPreferredSize(new java.awt.Dimension(600, 500));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(userViews, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userViews, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 890;
+        gridBagConstraints.ipady = 480;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 10);
+        jPanel4.add(userViews, gridBagConstraints);
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        UserLogin role = new UserLogin();
+        role.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        role.pack();
+        role.setLocationRelativeTo(null);
+        role.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

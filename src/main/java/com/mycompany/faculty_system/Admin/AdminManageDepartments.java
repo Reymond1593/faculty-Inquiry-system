@@ -4,9 +4,11 @@
  */
 package com.mycompany.faculty_system.Admin;
 
-import com.mycompany.faculty_system.Components.UserRow;
+import com.mycompany.faculty_system.Components.DepartmentsRow;
+import com.mycompany.faculty_system.Model.DepartmentUI;
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.AdminService;
+import com.mycompany.faculty_system.Service.DepartmentService;
 import com.mycompany.faculty_system.Service.InstructorService;
 import java.awt.Dimension;
 import java.sql.SQLException;
@@ -16,16 +18,16 @@ import java.util.ArrayList;
  *
  * @author reymo
  */
-public class Admin_manage_students extends javax.swing.JPanel {
-
-ArrayList<UserUI> studentList;
-
-public Admin_manage_students() throws SQLException {
-    initComponents();
-    AdminService service = new AdminService();
-    this.studentList = service.getStudentsList();
-    refreshInstructorList();
-}
+public class AdminManageDepartments extends javax.swing.JPanel {
+    private ArrayList<DepartmentUI> departmentList;
+    
+    public AdminManageDepartments() throws SQLException {
+        initComponents();
+        
+        DepartmentService service = new DepartmentService();
+        this.departmentList = service.getAllDepartments();
+        refreshInstructorList();
+    }
 public void refreshInstructorList() {
 
     jPanel3.removeAll();
@@ -37,12 +39,12 @@ public void refreshInstructorList() {
             )
     );
 
-    for (UserUI instructor : studentList) {
+    for (DepartmentUI department : departmentList) {
 
-        UserRow row =
-                new UserRow(
-                        instructor,
-                        studentList,
+        DepartmentsRow row =
+                new DepartmentsRow(
+                        department,
+                        departmentList,
                         this::refreshInstructorList
                 );
 
@@ -61,7 +63,7 @@ public void refreshInstructorList() {
 
     jPanel3.repaint();
 }
-public void refreshFilteredList(ArrayList<UserUI> list) {
+public void refreshFilteredList(ArrayList<DepartmentUI> list) {
 
     jPanel3.removeAll();
 
@@ -72,11 +74,11 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
             )
     );
 
-    for (UserUI instructor : list) {
+    for (DepartmentUI department : list) {
 
-        UserRow row = new UserRow(
-                instructor,
-                studentList,
+        DepartmentsRow row = new DepartmentsRow(
+                department,
+                departmentList,
                 this::refreshInstructorList
         );
 
@@ -100,7 +102,6 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -108,8 +109,6 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         search_action = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -123,31 +122,14 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         search_txt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
         search_txt.addActionListener(this::search_txtActionPerformed);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 336;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        jPanel1.add(search_txt, gridBagConstraints);
 
         search_action.setBackground(new java.awt.Color(102, 255, 102));
         search_action.setText("Search");
         search_action.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         search_action.addActionListener(this::search_actionActionPerformed);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        jPanel1.add(search_action, gridBagConstraints);
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
         jPanel7.setPreferredSize(new java.awt.Dimension(500, 120));
@@ -156,21 +138,12 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 13, -1, -1));
 
-        jPanel8.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("COURSE");
-        jPanel8.add(jLabel13);
-
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, 30));
-
         jPanel9.setBackground(new java.awt.Color(102, 153, 255));
         jPanel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("NAME");
+        jLabel11.setText("ID");
         jPanel9.add(jLabel11);
 
         jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, 30));
@@ -178,16 +151,16 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         jPanel10.setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("E-MAIL");
+        jLabel12.setText("NAME");
         jPanel10.add(jLabel12);
 
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 80, 30));
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 80, 30));
 
         jLabel14.setBackground(new java.awt.Color(153, 153, 153));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 34)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Manage Students");
+        jLabel14.setText("Manage Departments");
         jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 770, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -196,31 +169,37 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         jLabel10.setText("ACTIONS");
         jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 200, 30));
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
-        jPanel1.add(jPanel7, gridBagConstraints);
-
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 300));
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
         jScrollPane2.setViewportView(jPanel3);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 799;
-        gridBagConstraints.ipady = 344;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 6, 0);
-        jPanel1.add(jScrollPane2, gridBagConstraints);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(search_action, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_action, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
@@ -233,8 +212,8 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         // TODO add your handling code here:
             String keyword = search_txt.getText();
 
-            ArrayList<UserUI> filtered =
-                    InstructorService.searchInstructors(studentList, keyword);
+            ArrayList<DepartmentUI> filtered =
+                    DepartmentService.searchDepartments(departmentList, keyword);
 
             refreshFilteredList(filtered);
     }//GEN-LAST:event_search_actionActionPerformed
@@ -245,14 +224,12 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton search_action;

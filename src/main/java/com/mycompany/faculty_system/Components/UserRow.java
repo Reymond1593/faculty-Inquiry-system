@@ -4,9 +4,9 @@ import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.InstructorService;
 import java.util.ArrayList;
 
-public class InstructorRow extends javax.swing.JPanel {
+public class UserRow extends javax.swing.JPanel {
 
-    public InstructorRow(
+    public UserRow(
             UserUI instructor,
             ArrayList<UserUI> instructorList,
             Runnable refreshCallback

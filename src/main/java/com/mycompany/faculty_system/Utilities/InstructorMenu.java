@@ -2,6 +2,8 @@ package com.mycompany.faculty_system.Utilities;
 
 import com.mycompany.faculty_system.Admin.*;
 import com.mycompany.faculty_system.Components.UserComponents;
+import com.mycompany.faculty_system.Instructor.EditProfile;
+import java.sql.SQLException;
 import java.util.function.Consumer;
 import javax.swing.JPanel;
 
@@ -12,22 +14,21 @@ public class InstructorMenu {
         UserComponents components = new UserComponents();
 
         components.addButton(
-            "Dashboard",
+            "Manage Students",
             buttonContainer,
-            () -> switchView.accept(new admin_dashboard())
+            () -> {
+            try {
+                switchView.accept(new Admin_manage_students());
+            } catch (SQLException ex) {
+                System.getLogger(InstructorMenu.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        }
         );
-//        components.addButton(
-//            "Manage Students",
-//            buttonContainer,
-//            () -> switchView.accept(new Admin_manage_instructors(instructor))
-//        );
-
-
         
         components.addButton(
             "Edit Profile",
             buttonContainer,
-            () -> switchView.accept(new admin_dashboard())
+            () -> switchView.accept(new EditProfile())
         );
 
     }
