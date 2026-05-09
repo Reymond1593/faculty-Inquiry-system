@@ -121,7 +121,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
 
         setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
@@ -202,7 +202,7 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 6);
         jPanel1.add(jPanel7, gridBagConstraints);
 
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 300));
@@ -212,14 +212,14 @@ public void refreshFilteredList(ArrayList<UserUI> list) {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 799;
+        gridBagConstraints.ipadx = 774;
         gridBagConstraints.ipady = 344;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 6, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 6, 6, 6);
         jPanel1.add(jScrollPane2, gridBagConstraints);
 
         add(jPanel1);
