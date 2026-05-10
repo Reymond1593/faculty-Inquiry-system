@@ -109,6 +109,7 @@ public class UserRegistration extends javax.swing.JFrame {
         confirmPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
 
         item.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        //item.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "SOIT", "SOED" }));
         item.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 1, true));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
@@ -123,6 +124,16 @@ public class UserRegistration extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 51, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Already have an account? Login here");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jLabel4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel4KeyPressed(evt);
+            }
+        });
 
         error_message.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         error_message.setForeground(new java.awt.Color(255, 0, 51));
@@ -340,6 +351,27 @@ public class UserRegistration extends javax.swing.JFrame {
                     evt
             );
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        UserLogin role = new UserLogin();
+        role.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        role.pack();
+        role.setLocationRelativeTo(null);
+        role.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel4KeyPressed
+        // TODO add your handling code here:
+                this.dispose();
+        UserLogin role = new UserLogin();
+        role.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        role.pack();
+        role.setLocationRelativeTo(null);
+        role.setVisible(true);
+    }//GEN-LAST:event_jLabel4KeyPressed
 
     /**
      * @param args the command line arguments

@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -128,6 +129,23 @@ public class UserRepository {
         addCourse add = new addCourse();
         add.handle(course);
     }
+    public int getDepartmentCount(){
+        getDepartmentCount count = new getDepartmentCount();
+        return count.getCount();
+    }
+    public int getInstructorCount(){
+        getInstructorCount count = new getInstructorCount();
+        return count.getCount();
+    }
 
+    public int getStudentCount() {
+        getStudentCount count = new getStudentCount();
+        return count.getCount();
+    }
+    public DefaultTableModel getUserAndDeparments(){
+        getListOfUsersAndDepartments get = new getListOfUsersAndDepartments();
+        return get.handle();
+    }
+    
     
 }

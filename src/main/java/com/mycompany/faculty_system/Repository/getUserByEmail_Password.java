@@ -45,8 +45,10 @@ public class getUserByEmail_Password {
         
         User dbUser = new User();
         dbUser.setRoles(roles);
+        dbUser.setId(rs.getInt("user_id"));
         dbUser.setFirstname(rs.getString("first_name"));
         dbUser.setLastname(rs.getString("last_name"));
+        dbUser.setEmail(rs.getString("email"));
         return dbUser;
     }
 }

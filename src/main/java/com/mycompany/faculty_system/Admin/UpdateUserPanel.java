@@ -209,7 +209,7 @@ public class UpdateUserPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         AdminService service = new AdminService();
         try {
-            service.updateUser(firstname.getText(), lastname.getText(), email.getText(), userId, refreshCallback);
+            service.updateUser(firstname.getText(), lastname.getText(), email.getText(), userId);
             JOptionPane.showMessageDialog(
                     null,
                     "User updated successfully!"

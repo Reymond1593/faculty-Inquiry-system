@@ -30,7 +30,8 @@ import javax.swing.JPanel;
 public class UserFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UserFrame.class.getName());
-    private User user;
+    private User user = new User();
+    private int id;
     public UserFrame() {
         initComponents();
         jPanel4.setLayout(new java.awt.BorderLayout());
@@ -174,7 +175,16 @@ public class UserFrame extends javax.swing.JFrame {
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 
-
+    public void setProfile(User dbUser) {
+        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
+        role.setText(dbUser.getRoles().getName());
+        this.id = dbUser.getId();
+        
+        user.setId(dbUser.getId());
+        user.setFirstname(dbUser.getFirstname());
+        user.setLastname(dbUser.getLastname());
+        user.setEmail(dbUser.getEmail());
+    }
     private void switchView(JPanel panel) {
         userViews.removeAll();
         userViews.setLayout(new java.awt.BorderLayout());
@@ -192,20 +202,15 @@ public class UserFrame extends javax.swing.JFrame {
 
             case "Instructor" -> {
                 InstructorMenu instructorMenu = new InstructorMenu();
-                instructorMenu.handle(UserButtonContainer, this::switchView);
+                instructorMenu.handle(UserButtonContainer, this::switchView, id, user);
             }
             
             case "Student" -> {
                 StudentMenu studentMenu = new StudentMenu();
-                studentMenu.handle(UserButtonContainer, this::switchView);
+                studentMenu.handle(UserButtonContainer, this::switchView, id, user);
             }
         }
 
-    }
-
-    public void setProfile(User dbUser) {
-        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
-        role.setText(dbUser.getRoles().getName());
     }
 
 }

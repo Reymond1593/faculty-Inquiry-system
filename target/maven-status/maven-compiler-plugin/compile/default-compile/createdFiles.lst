@@ -1,13 +1,14 @@
 com\mycompany\faculty_system\Admin\AdminAddCourse.class
 com\mycompany\faculty_system\Admin\Admin_manage_students.class
 com\mycompany\faculty_system\Components\UserDialogUI.class
-com\mycompany\faculty_system\Admin\edit_instructor_profile.class
 com\mycompany\faculty_system\Repository\getAllCoures.class
 com\mycompany\faculty_system\UserLogin$2.class
 com\mycompany\faculty_system\Utilities\StudentMenu.class
 com\mycompany\faculty_system\Service\UserService.class
 Student.class
 com\mycompany\faculty_system\Repository\getCoursesIdByName.class
+com\mycompany\faculty_system\Repository\getDepartmentCount.class
+com\mycompany\faculty_system\Repository\getStudentCount.class
 com\mycompany\faculty_system\Admin\Admin_manage_instructors.class
 com\mycompany\faculty_system\Admin\AdminAddDepartments.class
 com\mycompany\faculty_system\Instructor\Instructor_add_students.class
@@ -16,6 +17,7 @@ com\mycompany\faculty_system\UserFrame.class
 com\mycompany\faculty_system\Model\UserUI.class
 com\mycompany\faculty_system\Admin\AdminManageCourse.class
 com\mycompany\faculty_system\Repository\getAllInstructor.class
+com\mycompany\faculty_system\Repository\getListOfUsersAndDepartments.class
 com\mycompany\faculty_system\Service\CourseService.class
 com\mycompany\faculty_system\Instructor\instructor_dashboard.class
 com\mycompany\faculty_system\UserRole.class
@@ -30,6 +32,7 @@ com\mycompany\faculty_system\UserLogin.class
 com\mycompany\faculty_system\Repository\addDepartments.class
 com\mycompany\faculty_system\Utilities\PasswordUtil.class
 com\mycompany\faculty_system\Repository\getDepartmentIdByName.class
+com\mycompany\faculty_system\UserRegistration$1.class
 com\mycompany\faculty_system\Components\ComboItem.class
 com\mycompany\faculty_system\Student\Student_view_instructor$1.class
 com\mycompany\faculty_system\Student\Student_view_instructor.class
@@ -39,6 +42,7 @@ com\mycompany\faculty_system\Admin\admin_dashboard.class
 com\mycompany\faculty_system\Repository\addInstructor.class
 com\mycompany\faculty_system\Model\Roles.class
 com\mycompany\faculty_system\Components\DepartmentsRow.class
+com\mycompany\faculty_system\Repository\getInstructorCount.class
 com\mycompany\faculty_system\Service\ValidateUser.class
 com\mycompany\faculty_system\Repository\deleteUser.class
 com\mycompany\faculty_system\Repository\updateUser.class
@@ -61,7 +65,7 @@ com\mycompany\faculty_system\Service\DepartmentService.class
 com\mycompany\faculty_system\Utilities\InstructorMenu.class
 com\mycompany\faculty_system\Model\DepartmentUI.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox.class
-com\mycompany\faculty_system\Admin\edit_student_profile.class
+com\mycompany\faculty_system\UserRegistration$2.class
 com\mycompany\faculty_system\Repository\addStudent.class
 com\mycompany\faculty_system\Instructor\Instructor_manage_students.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox$1.class
@@ -72,3 +76,4 @@ com\mycompany\faculty_system\Components\UserComponents.class
 com\mycompany\faculty_system\Model\Departments.class
 com\mycompany\faculty_system\Components\CoursesRow.class
 com\mycompany\faculty_system\UserRegistration.class
+com\mycompany\faculty_system\Admin\user_edit_profile.class
