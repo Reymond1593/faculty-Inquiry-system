@@ -31,7 +31,7 @@ public class CourseService {
     public static void updateCourse(
             Courses department,
             Runnable refreshCallback
-    ) {
+    ) throws SQLException {
 
         String newName = JOptionPane.showInputDialog(
                 null,
@@ -49,7 +49,8 @@ public class CourseService {
                     null,
                     "Department updated successfully!"
             );
-            
+            AdminService service = new AdminService();
+            service.UpdateCourse(department.getId(), department.getName());
             
         }
     }
@@ -61,7 +62,7 @@ public class CourseService {
             ArrayList<Courses> departmentList,
             Courses department,
             Runnable refreshCallback
-    ) {
+    ) throws SQLException {
 
         int confirm = JOptionPane.showConfirmDialog(
                 null,
@@ -80,6 +81,8 @@ public class CourseService {
                     null,
                     "Department deleted successfully!"
             );
+            AdminService service = new AdminService();
+            service.deleteCourse(department.getId());
         }
     }
 

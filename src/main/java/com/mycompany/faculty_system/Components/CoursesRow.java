@@ -5,6 +5,7 @@ import com.mycompany.faculty_system.Model.Courses;
 import com.mycompany.faculty_system.Model.DepartmentUI;
 import com.mycompany.faculty_system.Service.CourseService;
 import com.mycompany.faculty_system.Service.DepartmentService;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CoursesRow extends javax.swing.JPanel {
@@ -76,14 +77,26 @@ public class CoursesRow extends javax.swing.JPanel {
         );
 
         btnUpdate.addActionListener(e ->
+                {
+            try {
                 CourseService.updateCourse(
                         department,
                         refreshCallback
-                )
+                );
+            } catch (SQLException ex) {
+                System.getLogger(CoursesRow.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        }
         );
 
         btnDelete.addActionListener(e ->
-                CourseService.deleteCourse(departmentList, department, refreshCallback)
+                {
+            try {
+                CourseService.deleteCourse(departmentList, department, refreshCallback);
+            } catch (SQLException ex) {
+                System.getLogger(CoursesRow.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        }
         );
 
         // =====================

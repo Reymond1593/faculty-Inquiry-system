@@ -43,14 +43,27 @@ public class AdminService {
         UserRepository repo = new UserRepository();
         repo.updateDepartment(deptId, deptName);
     }
+    public void UpdateCourse(int id, String name) throws SQLException {
+        UserRepository repo = new UserRepository();
+        repo.updateCourse(id, name);
+    }
     
     public void addDepartments(String name) throws SQLException{
         UserRepository repo = new UserRepository();
         repo.addDepartments(name);
+    }
+    public void addCourses(String name) throws SQLException{
+        UserRepository repo = new UserRepository();
+        repo.addCourse(name);
     }
     
     public void deleteDepartments(int deptId) throws SQLException{
         UserRepository repo = new UserRepository();
         repo.deleteDepartment(deptId);
     }
+    public void deleteCourse(int deptId) throws SQLException{
+        UserRepository repo = new UserRepository();
+        repo.deleteCourse(deptId);
+    }
+
 }

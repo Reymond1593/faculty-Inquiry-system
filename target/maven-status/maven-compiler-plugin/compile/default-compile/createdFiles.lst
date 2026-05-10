@@ -22,6 +22,7 @@ com\mycompany\faculty_system\UserRole.class
 com\mycompany\faculty_system\Repository\getAllStudents.class
 com\mycompany\faculty_system\Repository\UserRepository.class
 com\mycompany\faculty_system\Model\User.class
+com\mycompany\faculty_system\Repository\addCourse.class
 com\mycompany\faculty_system\Instructor\EditProfile.class
 com\mycompany\faculty_system\Service\AdminService.class
 com\mycompany\faculty_system\Repository\deleteDepartment.class
@@ -44,6 +45,7 @@ com\mycompany\faculty_system\Repository\updateUser.class
 com\mycompany\faculty_system\Utilities\Alert.class
 com\mycompany\faculty_system\UserLogin$1.class
 com\mycompany\faculty_system\Repository\getUserByEmail_Password.class
+com\mycompany\faculty_system\Repository\updateCourse.class
 com\mycompany\faculty_system\Admin\UpdateUserPanel.class
 com\mycompany\faculty_system\Repository\getAllDepartments.class
 com\mycompany\faculty_system\Faculty_system.class
@@ -63,6 +65,7 @@ com\mycompany\faculty_system\Admin\edit_student_profile.class
 com\mycompany\faculty_system\Repository\addStudent.class
 com\mycompany\faculty_system\Instructor\Instructor_manage_students.class
 com\mycompany\faculty_system\Utilities\UserFrameComboBox$1.class
+com\mycompany\faculty_system\Repository\deleteCourse.class
 com\mycompany\faculty_system\Model\Courses.class
 com\mycompany\faculty_system\Instructor\Instructor_manage_students$1.class
 com\mycompany\faculty_system\Components\UserComponents.class

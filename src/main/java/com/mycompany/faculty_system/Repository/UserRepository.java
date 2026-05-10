@@ -97,13 +97,20 @@ public class UserRepository {
         updateDepartment update = new updateDepartment();
         update.handle(deptId, deptName);
     }
-    
+    public void updateCourse(int id, String name) throws SQLException {
+        updateCourse update = new updateCourse();
+        update.handle(id, name);
+    }
     public void deleteUser(int userId) throws SQLException {
         deleteUser delete = new deleteUser();
         delete.handle(userId);
     }
     public void deleteDepartment(int deptId) throws SQLException {
         deleteDepartment delete = new deleteDepartment();
+        delete.handle(deptId);
+    }
+    public void deleteCourse(int deptId) throws SQLException {
+        deleteCourse delete = new deleteCourse();
         delete.handle(deptId);
     }
         
@@ -113,6 +120,13 @@ public class UserRepository {
         
         addDepartments add = new addDepartments();
         add.handle(departments);
+    }
+    public void addCourse(String name) throws SQLException{
+        Courses course = new Courses();
+        course.setName(name);
+        
+        addCourse add = new addCourse();
+        add.handle(course);
     }
 
     

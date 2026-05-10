@@ -182,9 +182,6 @@ public class UserFrame extends javax.swing.JFrame {
         userViews.revalidate();
         userViews.repaint();
     }
-    public void setUser(User user){
-        this.user = user;
-    }
     public void configureUser(String userRole) throws SQLException {
 
         switch (userRole) {
@@ -207,7 +204,8 @@ public class UserFrame extends javax.swing.JFrame {
     }
 
     public void setProfile(User dbUser) {
-        //
+        username.setText(dbUser.getFirstname() + " " + dbUser.getLastname());
+        role.setText(dbUser.getRoles().getName());
     }
 
 }
