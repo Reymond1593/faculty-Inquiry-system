@@ -1,32 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.faculty_system.Model;
 
-
 public class UserUI {
+
     private int id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String department;
 
     public UserUI(
             int id,
-            String name,
+            String firstName,
+            String lastName,
             String email,
             String department
     ) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.department = department;
     }
-    public int getId(){
+
+    // Getters
+    public int getId() {
         return id;
     }
-    public String getName() {
-        return name;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getEmail() {
@@ -37,8 +43,13 @@ public class UserUI {
         return department;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    // Setters
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {

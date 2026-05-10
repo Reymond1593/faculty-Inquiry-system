@@ -7,6 +7,7 @@ package com.mycompany.faculty_system.Repository;
 import com.mycompany.faculty_system.Components.ComboItem;
 import com.mycompany.faculty_system.Connection.DbConnector;
 import com.mycompany.faculty_system.Model.Courses;
+import com.mycompany.faculty_system.Model.DepartmentUI;
 import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Model.Roles;
@@ -29,14 +30,17 @@ public class UserRepository {
     public void addInstructor(String user_firstName, String user_lastName, String user_email, String user_password, ComboItem selectedItem, int roleId) throws SQLException {
         User user = new User();
         Departments newDepartments = new Departments();
+        Roles role = new Roles();
         newDepartments.setId(selectedItem.getId());
         newDepartments.setName(selectedItem.getName());
+        role.setId(roleId);
         
         user.setFirstname(user_firstName);
         user.setLastname(user_lastName);
         user.setEmail(user_email);
         user.setPassword(user_password);
         user.setDepartments(newDepartments);
+        user.setRoles(role);
         addInstructor add = new addInstructor();
         add.handle(user);
     }
@@ -76,10 +80,40 @@ public class UserRepository {
         getAllStudents getAll = new getAllStudents();
         return getAll.handle();
     }
-
+    public ArrayList<Courses> getCourseList() throws SQLException{
+        getAllCoures getAll = new getAllCoures();
+        return getAll.handle();
+    }
+    public ArrayList<DepartmentUI> getDepartmentList() throws SQLException{
+        getAllDepartments getAll = new getAllDepartments();
+        return getAll.handle();
+    }
+    
     public void updateUser(User user, int userId) throws SQLException {
         updateUser update = new updateUser();
         update.handle(user, userId);
     }
+    public void updateDepartment(int deptId, String deptName) throws SQLException {
+        updateDepartment update = new updateDepartment();
+        update.handle(deptId, deptName);
+    }
+    
+    public void deleteUser(int userId) throws SQLException {
+        deleteUser delete = new deleteUser();
+        delete.handle(userId);
+    }
+    public void deleteDepartment(int deptId) throws SQLException {
+        deleteDepartment delete = new deleteDepartment();
+        delete.handle(deptId);
+    }
+        
+    public void addDepartments(String name) throws SQLException{
+        Departments departments = new Departments();
+        departments.setName(name);
+        
+        addDepartments add = new addDepartments();
+        add.handle(departments);
+    }
+
     
 }

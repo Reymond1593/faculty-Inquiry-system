@@ -21,8 +21,8 @@ public class UserDialogUI extends JDialog {
     
     public void viewHandle(UserUI instructor){
         
-        setTitle("Instructor Details");
-        setSize(400, 250);
+        setTitle("Details");
+        setSize(500, 500);
         setLocationRelativeTo(null);
         setModal(true);
 
@@ -34,8 +34,8 @@ public class UserDialogUI extends JDialog {
     }
     public void updateHandle(UserUI instructor, Runnable refreshCallback){
         
-        setTitle("Instructor Details");
-        setSize(400, 250);
+        setTitle("Details");
+        setSize(500, 500);
         setLocationRelativeTo(null);
         setModal(true);
 

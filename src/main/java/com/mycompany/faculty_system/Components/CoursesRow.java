@@ -1,15 +1,16 @@
 package com.mycompany.faculty_system.Components;
 
 
+import com.mycompany.faculty_system.Model.Courses;
 import com.mycompany.faculty_system.Model.DepartmentUI;
+import com.mycompany.faculty_system.Service.CourseService;
 import com.mycompany.faculty_system.Service.DepartmentService;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class DepartmentsRow extends javax.swing.JPanel {
+public class CoursesRow extends javax.swing.JPanel {
 
-    public DepartmentsRow(
-            DepartmentUI department, ArrayList<DepartmentUI> departmentList, Runnable refreshCallback) {
+    public CoursesRow(
+            Courses department, ArrayList<Courses> departmentList, Runnable refreshCallback) {
 
         setBackground(java.awt.Color.BLACK);
         setPreferredSize(new java.awt.Dimension(750, 60));
@@ -71,34 +72,18 @@ public class DepartmentsRow extends javax.swing.JPanel {
         // ACTIONS
         // =====================
         btnView.addActionListener(e ->
-                DepartmentService.viewDepartment(department)
+                CourseService.viewCourse(department)
         );
 
         btnUpdate.addActionListener(e ->
-                {
-            try {
-                DepartmentService.updateDepartment(
+                CourseService.updateCourse(
                         department,
                         refreshCallback
-                );
-            } catch (SQLException ex) {
-                System.getLogger(DepartmentsRow.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            }
-        }
+                )
         );
 
         btnDelete.addActionListener(e ->
-                {
-            try {
-                DepartmentService.deleteDepartment(
-                        departmentList,
-                        department,
-                        refreshCallback
-                );
-            } catch (SQLException ex) {
-                System.getLogger(DepartmentsRow.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            }
-        }
+                CourseService.deleteCourse(departmentList, department, refreshCallback)
         );
 
         // =====================

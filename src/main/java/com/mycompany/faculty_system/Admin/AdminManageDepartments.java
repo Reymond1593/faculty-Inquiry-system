@@ -24,8 +24,9 @@ public class AdminManageDepartments extends javax.swing.JPanel {
     public AdminManageDepartments() throws SQLException {
         initComponents();
         
-        DepartmentService service = new DepartmentService();
-        this.departmentList = service.getAllDepartments();
+        //DepartmentService service = new DepartmentService();
+        AdminService service = new AdminService();
+        this.departmentList = service.getDepartmentsList();
         refreshInstructorList();
     }
 public void refreshInstructorList() {

@@ -10,7 +10,8 @@ import java.util.ArrayList;
 public class getAllStudents {
     private DbConnector connector = new DbConnector();
     
-    public ArrayList<UserUI> handle() throws SQLException{
+    public ArrayList<UserUI> handle() throws SQLException {
+
         ArrayList<UserUI> users = new ArrayList<>();
 
         String sql =
@@ -20,22 +21,24 @@ public class getAllStudents {
                 + "JOIN courses c "
                 + "ON u.course_id = c.course_id "
                 + "WHERE u.role_id = 3";
-        
+
         PreparedStatement ps = connector.database().prepareStatement(sql);
+
         ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
 
-            UserUI students = new UserUI(
-                                rs.getInt("user_id"),
-                                rs.getString("first_name") + " " + rs.getString("last_name"),
-                                rs.getString("email"),
-                                rs.getString("course_name")
-                        );
+        while (rs.next()) {
 
-                users.add(students);
+            UserUI student = new UserUI(
+                    rs.getInt("user_id"),
+                    rs.getString("first_name"),
+                    rs.getString("last_name"),
+                    rs.getString("email"),
+                    rs.getString("course_name")
+            );
 
-            return users;
+            users.add(student);
         }
-        return null;
+
+        return users;
     }
 }

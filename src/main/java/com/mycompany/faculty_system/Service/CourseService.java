@@ -1,18 +1,20 @@
 package com.mycompany.faculty_system.Service;
 
 import com.mycompany.faculty_system.Components.ComboItem;
+import com.mycompany.faculty_system.Model.Courses;
 import com.mycompany.faculty_system.Model.DepartmentUI;
 import com.mycompany.faculty_system.Repository.UserRepository;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class DepartmentService {
+public class CourseService {
+
 
     // =========================
     // VIEW
     // =========================
-    public static void viewDepartment(DepartmentUI department) {
+    public static void viewCourse(Courses department) {
 
         JOptionPane.showMessageDialog(
                 null,
@@ -26,7 +28,10 @@ public class DepartmentService {
     // =========================
     // UPDATE
     // =========================
-    public static void updateDepartment(DepartmentUI department,Runnable refreshCallback) throws SQLException {
+    public static void updateCourse(
+            Courses department,
+            Runnable refreshCallback
+    ) {
 
         String newName = JOptionPane.showInputDialog(
                 null,
@@ -44,19 +49,19 @@ public class DepartmentService {
                     null,
                     "Department updated successfully!"
             );
-            AdminService service = new AdminService();
-            service.updateDepartment(department.getId(), newName);
+            
+            
         }
     }
 
     // =========================
     // DELETE
     // =========================
-    public static void deleteDepartment(
-            ArrayList<DepartmentUI> departmentList,
-            DepartmentUI department,
+    public static void deleteCourse(
+            ArrayList<Courses> departmentList,
+            Courses department,
             Runnable refreshCallback
-    ) throws SQLException {
+    ) {
 
         int confirm = JOptionPane.showConfirmDialog(
                 null,
@@ -75,22 +80,20 @@ public class DepartmentService {
                     null,
                     "Department deleted successfully!"
             );
-            AdminService service = new AdminService();
-            service.deleteDepartments(department.getId());
         }
     }
 
     // =========================
     // SEARCH
     // =========================
-    public static ArrayList<DepartmentUI> searchDepartments(
-            ArrayList<DepartmentUI> departmentList,
+    public static ArrayList<Courses> searchCourse(
+            ArrayList<Courses> departmentList,
             String keyword
     ) {
 
-        ArrayList<DepartmentUI> filtered = new ArrayList<>();
+        ArrayList<Courses> filtered = new ArrayList<>();
 
-        for (DepartmentUI department : departmentList) {
+        for (Courses department : departmentList) {
 
             if (department.getName()
                     .toLowerCase()

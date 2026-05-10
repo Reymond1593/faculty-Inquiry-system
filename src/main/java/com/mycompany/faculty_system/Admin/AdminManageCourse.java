@@ -4,10 +4,14 @@
  */
 package com.mycompany.faculty_system.Admin;
 
+import com.mycompany.faculty_system.Components.CoursesRow;
 import com.mycompany.faculty_system.Components.DepartmentsRow;
+import com.mycompany.faculty_system.Model.Courses;
 import com.mycompany.faculty_system.Model.DepartmentUI;
+import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.AdminService;
+import com.mycompany.faculty_system.Service.CourseService;
 import com.mycompany.faculty_system.Service.DepartmentService;
 import com.mycompany.faculty_system.Service.InstructorService;
 import java.awt.Dimension;
@@ -19,13 +23,13 @@ import java.util.ArrayList;
  * @author reymo
  */
 public class AdminManageCourse extends javax.swing.JPanel {
-    private ArrayList<DepartmentUI> departmentList;
+    private ArrayList<Courses> courseList;
     
     public AdminManageCourse() throws SQLException {
         initComponents();
         
-        DepartmentService service = new DepartmentService();
-        this.departmentList = service.getAllDepartments();
+        AdminService service = new AdminService();
+        this.courseList = service.getCouresList();
         refreshInstructorList();
     }
 public void refreshInstructorList() {
@@ -39,12 +43,12 @@ public void refreshInstructorList() {
             )
     );
 
-    for (DepartmentUI department : departmentList) {
+    for (Courses course : courseList) {
 
-        DepartmentsRow row =
-                new DepartmentsRow(
-                        department,
-                        departmentList,
+        CoursesRow row =
+                new CoursesRow(
+                        course,
+                        courseList,
                         this::refreshInstructorList
                 );
 
@@ -63,7 +67,7 @@ public void refreshInstructorList() {
 
     jPanel3.repaint();
 }
-public void refreshFilteredList(ArrayList<DepartmentUI> list) {
+public void refreshFilteredList(ArrayList<Courses> list) {
 
     jPanel3.removeAll();
 
@@ -74,11 +78,11 @@ public void refreshFilteredList(ArrayList<DepartmentUI> list) {
             )
     );
 
-    for (DepartmentUI department : list) {
+    for (Courses department : list) {
 
-        DepartmentsRow row = new DepartmentsRow(
+        CoursesRow row = new CoursesRow(
                 department,
-                departmentList,
+                courseList,
                 this::refreshInstructorList
         );
 
@@ -212,8 +216,8 @@ public void refreshFilteredList(ArrayList<DepartmentUI> list) {
         // TODO add your handling code here:
             String keyword = search_txt.getText();
 
-            ArrayList<DepartmentUI> filtered =
-                    DepartmentService.searchDepartments(departmentList, keyword);
+            ArrayList<Courses> filtered =
+                    CourseService.searchCourse(courseList, keyword);
 
             refreshFilteredList(filtered);
     }//GEN-LAST:event_search_actionActionPerformed

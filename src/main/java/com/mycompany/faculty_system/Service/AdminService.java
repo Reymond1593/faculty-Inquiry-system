@@ -1,5 +1,8 @@
 package com.mycompany.faculty_system.Service;
 
+import com.mycompany.faculty_system.Model.Courses;
+import com.mycompany.faculty_system.Model.DepartmentUI;
+import com.mycompany.faculty_system.Model.Departments;
 import com.mycompany.faculty_system.Model.User;
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Repository.UserRepository;
@@ -18,8 +21,16 @@ public class AdminService {
         
         return repo.getStudentsList();
     }
+    public ArrayList<DepartmentUI> getDepartmentsList() throws SQLException{
+        UserRepository repo = new UserRepository();
+        return repo.getDepartmentList();
+    }
+    public ArrayList<Courses> getCouresList() throws SQLException{
+        UserRepository repo = new UserRepository();
+        return repo.getCourseList();
+    }
 
-    public void updateUser(String user_firstName, String user_lastName, String user_email, int userId) throws SQLException {
+    public void updateUser(String user_firstName, String user_lastName, String user_email, int userId, Runnable refreshCallback) throws SQLException {
         User user = new User();
         user.setFirstname(user_firstName);
         user.setLastname(user_lastName);
@@ -27,5 +38,19 @@ public class AdminService {
         
         UserRepository repo = new UserRepository();
         repo.updateUser(user, userId);
+    }
+    public void updateDepartment(int deptId, String deptName) throws SQLException{
+        UserRepository repo = new UserRepository();
+        repo.updateDepartment(deptId, deptName);
+    }
+    
+    public void addDepartments(String name) throws SQLException{
+        UserRepository repo = new UserRepository();
+        repo.addDepartments(name);
+    }
+    
+    public void deleteDepartments(int deptId) throws SQLException{
+        UserRepository repo = new UserRepository();
+        repo.deleteDepartment(deptId);
     }
 }

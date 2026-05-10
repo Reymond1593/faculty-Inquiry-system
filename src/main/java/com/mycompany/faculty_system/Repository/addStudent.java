@@ -21,8 +21,6 @@ public class addStudent {
     
     
     public void handle(User user) throws SQLException {
-        
-        // 👉 get department_id using name
         getCoursesIdByName courseId = new getCoursesIdByName();
         courseId.handle(user.getCourses().getId());
 

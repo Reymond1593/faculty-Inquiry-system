@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class Admin_manage_instructors extends javax.swing.JPanel {
 
-ArrayList<UserUI> instructorList;
+    private ArrayList<UserUI> instructorList = new ArrayList();
 
 public Admin_manage_instructors() throws SQLException {
     initComponents();
@@ -26,6 +26,7 @@ public Admin_manage_instructors() throws SQLException {
     this.instructorList = service.getInstructorList();
     refreshInstructorList();
 }
+
 public void refreshInstructorList() {
 
     jPanel3.removeAll();

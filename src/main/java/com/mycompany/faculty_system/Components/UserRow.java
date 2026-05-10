@@ -2,6 +2,7 @@ package com.mycompany.faculty_system.Components;
 
 import com.mycompany.faculty_system.Model.UserUI;
 import com.mycompany.faculty_system.Service.InstructorService;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserRow extends javax.swing.JPanel {
@@ -21,7 +22,7 @@ public class UserRow extends javax.swing.JPanel {
         // NAME
         // =====================
         javax.swing.JLabel lblName =
-                new javax.swing.JLabel(instructor.getName());
+                new javax.swing.JLabel(instructor.getFirstName() + " " + instructor.getLastName());
         lblName.setForeground(java.awt.Color.WHITE);
 
         add(lblName,
@@ -84,11 +85,17 @@ public class UserRow extends javax.swing.JPanel {
         );
 
         btnDelete.addActionListener(e ->
+                {
+            try {
                 InstructorService.deleteInstructor(
                         instructorList,
                         instructor,
                         refreshCallback
-                )
+                );
+            } catch (SQLException ex) {
+                System.getLogger(UserRow.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        }
         );
 
         // =====================

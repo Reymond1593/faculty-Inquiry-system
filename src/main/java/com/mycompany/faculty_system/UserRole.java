@@ -4,6 +4,8 @@
  */
 package com.mycompany.faculty_system;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author arjay
@@ -126,7 +128,11 @@ public class UserRole extends javax.swing.JFrame {
         // TODO add your handling code here:
             this.dispose();
             UserRegistration view = new UserRegistration();
+        try {
             view.setRole(role.getSelectedItem().toString());
+        } catch (SQLException ex) {
+            System.getLogger(UserRole.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
             view.pack();
             view.setLocationRelativeTo(null);
             view.setVisible(true);

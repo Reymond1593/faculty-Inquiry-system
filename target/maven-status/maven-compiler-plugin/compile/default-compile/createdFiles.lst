@@ -2,6 +2,7 @@ com\mycompany\faculty_system\Admin\AdminAddCourse.class
 com\mycompany\faculty_system\Admin\Admin_manage_students.class
 com\mycompany\faculty_system\Components\UserDialogUI.class
 com\mycompany\faculty_system\Admin\edit_instructor_profile.class
+com\mycompany\faculty_system\Repository\getAllCoures.class
 com\mycompany\faculty_system\UserLogin$2.class
 com\mycompany\faculty_system\Utilities\StudentMenu.class
 com\mycompany\faculty_system\Service\UserService.class
@@ -15,6 +16,7 @@ com\mycompany\faculty_system\UserFrame.class
 com\mycompany\faculty_system\Model\UserUI.class
 com\mycompany\faculty_system\Admin\AdminManageCourse.class
 com\mycompany\faculty_system\Repository\getAllInstructor.class
+com\mycompany\faculty_system\Service\CourseService.class
 com\mycompany\faculty_system\Instructor\instructor_dashboard.class
 com\mycompany\faculty_system\UserRole.class
 com\mycompany\faculty_system\Repository\getAllStudents.class
@@ -22,7 +24,9 @@ com\mycompany\faculty_system\Repository\UserRepository.class
 com\mycompany\faculty_system\Model\User.class
 com\mycompany\faculty_system\Instructor\EditProfile.class
 com\mycompany\faculty_system\Service\AdminService.class
+com\mycompany\faculty_system\Repository\deleteDepartment.class
 com\mycompany\faculty_system\UserLogin.class
+com\mycompany\faculty_system\Repository\addDepartments.class
 com\mycompany\faculty_system\Utilities\PasswordUtil.class
 com\mycompany\faculty_system\Repository\getDepartmentIdByName.class
 com\mycompany\faculty_system\Components\ComboItem.class
@@ -35,13 +39,16 @@ com\mycompany\faculty_system\Repository\addInstructor.class
 com\mycompany\faculty_system\Model\Roles.class
 com\mycompany\faculty_system\Components\DepartmentsRow.class
 com\mycompany\faculty_system\Service\ValidateUser.class
+com\mycompany\faculty_system\Repository\deleteUser.class
 com\mycompany\faculty_system\Repository\updateUser.class
 com\mycompany\faculty_system\Utilities\Alert.class
 com\mycompany\faculty_system\UserLogin$1.class
 com\mycompany\faculty_system\Repository\getUserByEmail_Password.class
 com\mycompany\faculty_system\Admin\UpdateUserPanel.class
+com\mycompany\faculty_system\Repository\getAllDepartments.class
 com\mycompany\faculty_system\Faculty_system.class
 com\mycompany\faculty_system\Connection\DbConnector.class
+com\mycompany\faculty_system\Repository\updateDepartment.class
 com\mycompany\faculty_system\Components\UserRow.class
 com\mycompany\faculty_system\Utilities\RoundedBorder.class
 com\mycompany\faculty_system\Utilities\AdminMenu.class
@@ -60,4 +67,5 @@ com\mycompany\faculty_system\Model\Courses.class
 com\mycompany\faculty_system\Instructor\Instructor_manage_students$1.class
 com\mycompany\faculty_system\Components\UserComponents.class
 com\mycompany\faculty_system\Model\Departments.class
+com\mycompany\faculty_system\Components\CoursesRow.class
 com\mycompany\faculty_system\UserRegistration.class

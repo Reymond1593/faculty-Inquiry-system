@@ -7,6 +7,14 @@ public class Courses {
     private String name;
     private int dept_id;
 
+    public Courses(){
+        
+    }
+    public Courses(int id, String name) {
+       this.id = id;
+       this.name = name;
+    }
+
     // Getter and Setter for ID
     public int getId() {
         return id;
